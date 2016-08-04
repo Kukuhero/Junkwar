@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+//sers test
 public class Bambus : MonoBehaviour {
 
 	private bool shoot = false;
