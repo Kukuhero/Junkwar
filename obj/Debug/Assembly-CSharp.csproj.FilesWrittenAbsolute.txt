@@ -1,0 +1,17 @@
+/Users/lukashinzmann/Unity/Prototype Stuffwar/Temp/bin/Debug/UnityEngine.dll
+/Users/lukashinzmann/Unity/Prototype Stuffwar/Temp/bin/Debug/UnityEditor.dll
+/Users/lukashinzmann/Unity/Prototype Stuffwar/Temp/bin/Debug/UnityEngine.Networking.dll
+/Users/lukashinzmann/Unity/Prototype Stuffwar/Temp/bin/Debug/UnityEngine.UI.dll
+/Users/lukashinzmann/Unity/Prototype Stuffwar/Temp/bin/Debug/Pathfinding.Ionic.Zip.Reduced.dll
+/Users/lukashinzmann/Unity/Prototype Stuffwar/Temp/bin/Debug/Pathfinding.JsonFx.dll
+/Users/lukashinzmann/Unity/Prototype Stuffwar/Temp/bin/Debug/Assembly-CSharp-firstpass.dll
+/Users/lukashinzmann/Unity/Prototype Stuffwar/Temp/bin/Debug/Assembly-CSharp-firstpass.dll.mdb
+/Users/lukashinzmann/Unity/Prototype Stuffwar/Temp/bin/Debug/Mono.Cecil.dll
+/Users/lukashinzmann/Unity/Prototype Stuffwar/Temp/bin/Debug/Unity.SerializationLogic.dll
+/Users/lukashinzmann/Unity/Prototype Stuffwar/Temp/bin/Debug/Unity.DataContract.dll
+/Users/lukashinzmann/Unity/Prototype Stuffwar/Temp/bin/Debug/ICSharpCode.NRefactory.dll
+/Users/lukashinzmann/Unity/Prototype Stuffwar/Temp/bin/Debug/Unity.UNetWeaver.dll
+/Users/lukashinzmann/Unity/Prototype Stuffwar/Temp/bin/Debug/Unity.UNetWeaver.dll.mdb
+/Users/lukashinzmann/Unity/Prototype Stuffwar/Temp/bin/Debug/Unity.CecilTools.dll
+/Users/lukashinzmann/Unity/Prototype Stuffwar/Temp/bin/Debug/Mono.Cecil.Pdb.dll
+/Users/lukashinzmann/Unity/Prototype Stuffwar/Temp/bin/Debug/Mono.Cecil.Mdb.dll
