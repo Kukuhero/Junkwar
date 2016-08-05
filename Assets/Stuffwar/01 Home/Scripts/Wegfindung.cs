@@ -4,13 +4,15 @@ using System.Collections;
 
 public class Wegfindung : MonoBehaviour {
 	public Transform target;
-	private Transform[] Wegpunkte = new Transform[10];
+	private Transform[] Wegpunkte = new Transform[15];
 	private Transform[] Wegpunktenew;
 	private float targetdistance;
-	private float[] VectorlaengeArray = new float[10];
-	private Wegpunkt[] WegpunkteArray = new Wegpunkt[10];
+	private float[] VectorlaengeArray = new float[15];
+	private Wegpunkt[] WegpunkteArray = new Wegpunkt[15];
 	private float kleinstestotaldistance;
 	private int ikleinstestotaldistance;
+	private float zweitkleinstestotaldistance;
+	private int izweitkleinstestotaldistance;
 	private Transform currenttarget;
 	private bool Wegpunktvar;
 
@@ -128,26 +130,47 @@ public class Wegfindung : MonoBehaviour {
 		else 
 		{
 			//print ("gleiches Object");
+			kleinstestotaldistance = 300f;
+			zweitkleinstestotaldistance = 300f;
+			izweitkleinstestotaldistance = 0;
 			int i = 1;
 			for (i = 1; i < Wegpunkte.Length; i++) 
 			{
 				VectorlaengeArray [i] = Vectorlaenge (Vectorberechnung (transform.position, Wegpunkte [i].transform.position));
 				WegpunkteArray [i].Wegpunkte_in_Array (Wegpunkte [i].transform.position, VectorlaengeArray [i] + Vectorlaenge (Vectorberechnung (Wegpunkte [i].transform.position, target.transform.position)), wegfreiberechnung (Wegpunkte [i].transform.position), Vectorlaenge (Vectorberechnung (transform.position, Wegpunkte [i].transform.position)), Vectorlaenge (Vectorberechnung (Wegpunkte [i].transform.position, target.transform.position)));
-				WegpunkteArray [ikleinstestotaldistance].Wegpunkte_in_Array (Wegpunkte [ikleinstestotaldistance].transform.position, 300f, wegfreiberechnung ( Wegpunkte [ikleinstestotaldistance].transform.position), Vectorlaenge (Vectorberechnung (transform.position, Wegpunkte [ikleinstestotaldistance].transform.position)), Vectorlaenge (Vectorberechnung (Wegpunkte [ikleinstestotaldistance].transform.position, target.transform.position)));
+				//WegpunkteArray [ikleinstestotaldistance].Wegpunkte_in_Array (Wegpunkte [ikleinstestotaldistance].transform.position, 300f, wegfreiberechnung ( Wegpunkte [ikleinstestotaldistance].transform.position), Vectorlaenge (Vectorberechnung (transform.position, Wegpunkte [ikleinstestotaldistance].transform.position)), Vectorlaenge (Vectorberechnung (Wegpunkte [ikleinstestotaldistance].transform.position, target.transform.position)));
 
 				if (WegpunkteArray [i].wegfrei_aus_Array ()) 
 				{
+					print("inif"+i);
 					if (WegpunkteArray [i].totaldistance_aus_Array () < kleinstestotaldistance) 
 					{
+						zweitkleinstestotaldistance = kleinstestotaldistance;
+						izweitkleinstestotaldistance = ikleinstestotaldistance;
 						kleinstestotaldistance = WegpunkteArray [i].totaldistance_aus_Array ();
 						ikleinstestotaldistance = i;
-					}
 
-					//print (WegpunkteArray [i].totaldistance_aus_Array ());
+					} else 
+					{
+						print ("inelse");
+						if (WegpunkteArray [i].totaldistance_aus_Array () < zweitkleinstestotaldistance) 
+						{
+							zweitkleinstestotaldistance = WegpunkteArray [i].totaldistance_aus_Array ();
+							izweitkleinstestotaldistance = i;
+						}
+					}
+					print (WegpunkteArray [i].totaldistance_aus_Array ());
 				}
 			}
-
-			currenttarget = Wegpunkte [ikleinstestotaldistance];
+			if (izweitkleinstestotaldistance == 0) 
+			{
+				currenttarget = Wegpunkte [ikleinstestotaldistance];
+			} 
+			else 
+			{
+				print ("else");
+				currenttarget = Wegpunkte [izweitkleinstestotaldistance];
+			}
 		}
 	}
 
@@ -184,7 +207,7 @@ public class Wegfindung : MonoBehaviour {
 					return true;
 				} else {
 					print ("false " + hit.transform.gameObject);
-					print(hit.transform.gameObject.transform.position);
+					//print(hit.transform.gameObject.transform.position);
 					return false;
 				}
 			}
