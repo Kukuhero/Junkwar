@@ -97,6 +97,7 @@ public class Wegfindung : MonoBehaviour {
 
 	void Wegfinden(GameObject Hindernis)
 	{   
+		int ii = 0;
 		print (Hindernis);
 		print ("inWegfinden");
 		Wegpunktenew = Hindernis.GetComponentsInChildren<Transform> ();
@@ -112,20 +113,26 @@ public class Wegfindung : MonoBehaviour {
 				WegpunkteArray [i] = new Wegpunkt ();
 				WegpunkteArray [i].Wegpunkte_in_Array (Wegpunkte [i].transform.position, VectorlaengeArray [i] + Vectorlaenge (Vectorberechnung (Wegpunkte [i].transform.position, target.transform.position)), wegfreiberechnung (Wegpunkte [i].transform.position), Vectorlaenge (Vectorberechnung (transform.position, Wegpunkte [i].transform.position)), Vectorlaenge (Vectorberechnung (Wegpunkte [i].transform.position, target.transform.position)));
 
-				if (WegpunkteArray [i].wegfrei_aus_Array ()) 
-				{
+				if (WegpunkteArray [i].wegfrei_aus_Array ()) {
 				
-					if (WegpunkteArray [i].totaldistance_aus_Array () < kleinstestotaldistance) 
-					{
+					if (WegpunkteArray [i].totaldistance_aus_Array () < kleinstestotaldistance) {
 						kleinstestotaldistance = WegpunkteArray [i].totaldistance_aus_Array ();
 						ikleinstestotaldistance = i;
 					}
 
 					//print (WegpunkteArray [i].totaldistance_aus_Array ());
+				} else 
+				{
+					ii++;
 				}
 			}
-
-			currenttarget = Wegpunkte [ikleinstestotaldistance];
+			if (ii == Wegpunkte.Length-1) {
+				print ("true");
+				currenttarget = Wegpunkte [2];
+			} else {
+				print ("false "+ii+" "+Wegpunkte.Length);
+				currenttarget = Wegpunkte [ikleinstestotaldistance];
+			}
 		} 
 		else 
 		{
@@ -168,7 +175,7 @@ public class Wegfindung : MonoBehaviour {
 			} 
 			else 
 			{
-				print ("else");
+				print ("else"+izweitkleinstestotaldistance);
 				currenttarget = Wegpunkte [izweitkleinstestotaldistance];
 			}
 		}
@@ -231,6 +238,13 @@ public class Wegfindung : MonoBehaviour {
 		}
 	}
 
+	void OnCollisionEnter(Collision collision)
+	{
+		print (collision.gameObject);
+		if (collision.gameObject.tag != "Basic Ground") {
+			Wegfinden (collision.gameObject);
+		} 
+	}
 }
 
 	
