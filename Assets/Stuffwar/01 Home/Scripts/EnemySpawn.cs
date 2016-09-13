@@ -17,18 +17,18 @@ public class EnemySpawn : MonoBehaviour
 	{
 		spawn ();
 		yield return new WaitForSeconds (8);
-		spawn ();
+		//spawn ();
 		yield return new WaitForSeconds (8);
-		spawn ();
+		//spawn ();
 		}	
 
 	void spawn()
 	{
 		v = spawnpoint.position;
-		for (int i = 0; i < 4; i++) 
+		for (int i = 0; i < 1; i++) 
 		{
 			Instantiate (spawnthing, v , spawnpoint.rotation);
-			v.x += 5 ;
+			v.x += 20;
 		}
 	}
 			

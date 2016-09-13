@@ -78,6 +78,7 @@ public class Tomate : MonoBehaviour {
 	{
 		while (true) {
 			while (shoot) {
+				print ("shoot");
 				if (Mathf.Abs(tomate.transform.rotation.y) <= Mathf.Abs(Quaternion.LookRotation (transform.position - target [0].transform.position).y * 1.1f) && Mathf.Abs(tomate.transform.rotation.y) >= Mathf.Abs(Quaternion.LookRotation (transform.position - target [0].transform.position).y * 0.9f)){
 					Shoot ();
 				}

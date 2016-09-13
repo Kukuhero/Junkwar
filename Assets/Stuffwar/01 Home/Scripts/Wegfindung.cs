@@ -15,6 +15,7 @@ public class Wegfindung : MonoBehaviour {
 	private int izweitkleinstestotaldistance;
 	private Transform currenttarget;
 	private bool Wegpunktvar;
+	public float speed;
 
 
 	// Use this for initialization
@@ -30,8 +31,8 @@ public class Wegfindung : MonoBehaviour {
 	{
 		//print (currenttarget);
 
-			transform.position += (currenttarget.position - transform.position) * 0.7f * Time.deltaTime;
-		
+			transform.position += (currenttarget.position - transform.position) * speed * Time.deltaTime;
+		print (target);
 	}
 
 	void FreierWeg()
@@ -70,6 +71,9 @@ public class Wegfindung : MonoBehaviour {
 							Wegpunktvar = true;
 							break;
 
+						case("Basic Ground"):
+							print ("ground");
+							break;
 						default:
 							print ("Weg versperrt2");
 							Wegfinden (hit.collider.gameObject);
@@ -238,13 +242,13 @@ public class Wegfindung : MonoBehaviour {
 		}
 	}
 
-	void OnCollisionEnter(Collision collision)
+/*	void OnCollisionEnter(Collision collision)
 	{
 		print (collision.gameObject);
 		if (collision.gameObject.tag != "Basic Ground") {
 			Wegfinden (collision.gameObject);
 		} 
-	}
+	}*/
 }
 
 	

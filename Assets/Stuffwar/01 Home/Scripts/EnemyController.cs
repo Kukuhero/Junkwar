@@ -2,27 +2,20 @@
 using System.Collections;
 
 public class EnemyController : MonoBehaviour {
-	public GameObject GameObject;
 	private Vector3 offset;
 	private bool damage = false;
-	public GameObject target;
-	public float speed;
+	public GameObject House;
 	public GameObject KIDef;
-	private bool stop = false;
 	public int health = 100;
 	public Texture2D healthTexture;
 	private Vector3 screenPos;
 	private int Position = 30;
 	public int maxhealth = 100;
-	CharacterController cc;
-	AIPath aip;
-	Seeker s;
+
 	// Use this for initialization
 	void Start () 
 	{
-		cc = gameObject.GetComponentInParent<CharacterController>();
-		aip = gameObject.GetComponentInParent<AIPath>();
-		s = GetComponentInParent <Seeker> ();
+		gameObject.GetComponent<Wegfindung>().target = House.transform;
 		StartCoroutine (makeDamage ());
 
 	}
@@ -33,19 +26,8 @@ public class EnemyController : MonoBehaviour {
 		
 		if (health <= 0) 
 		{
-			Destroy (GameObject);
+			Destroy (gameObject);
 		}
-		if (stop == false) {
-			cc.enabled = true;
-			aip.enabled = true;
-			s.enabled = true;
-		} else {
-			cc.enabled = false;
-			aip.enabled = false;
-			s.enabled = false;
-
-		}
-
 			
 	}
 		
@@ -57,24 +39,22 @@ public class EnemyController : MonoBehaviour {
 		case "KIDef":
 			offset = other.gameObject.transform.position - transform.position;
 			transform.rotation = Quaternion.LookRotation (offset);
-			stop = true;
-			target = other.gameObject;
+			gameObject.GetComponent<Wegfindung>().target = other.gameObject.transform;
 			damage = true;
 
 			break;
 
 		case "Haus":
 			
-			stop = true;
-			target = other.gameObject;
+			gameObject.GetComponent<Wegfindung>().target = other.gameObject.transform;
 			StartCoroutine (makeDamageHouse ());
 
 			break;
 
-		case "plant":
-			target = other.gameObject;
+		/*case "plant":
+			gameObject.GetComponent<Wegfindung>().target = other.gameObject.transform;
 
-			break;
+			break;*/
 		
 		}
 	}
@@ -84,12 +64,10 @@ public class EnemyController : MonoBehaviour {
 		switch (other.tag) 
 		{
 		case "KIDef":
-			stop = false;
 			damage = false;
 			break;
 
 		case "Haus":
-			stop = false;
 			break;
 		}
 	}
@@ -108,12 +86,11 @@ public class EnemyController : MonoBehaviour {
 	IEnumerator makeDamageHouse()
 	{
 
-		while ((int)target.GetComponentInParent<HouseController> ().HouseHealth != 0) {
-			if ((int)target.GetComponentInParent<HouseController> ().HouseHealth == 0) {
-				stop = true;
+		while ((int)House.GetComponentInParent<HouseController> ().HouseHealth != 0) {
+			if ((int)House.GetComponentInParent<HouseController> ().HouseHealth == 0) {
 				damage = false;
 			} else {
-				(int)target.GetComponentInParent<HouseController> ().HouseHealth -= 20;
+				(int)House.GetComponentInParent<HouseController> ().HouseHealth -= 20;
 				yield return new WaitForSeconds (1);
 			}
 		}
@@ -123,13 +100,12 @@ public class EnemyController : MonoBehaviour {
 	{
 		
 		while (true) {
-			if (target == null) {
-				stop = false;
+			if (gameObject.GetComponent<Wegfindung>().target == null) {
 				damage = false;
 			} else {
 				if (damage == true) 
 				{
-					(int)target.GetComponentInParent<KIDefController> ().KIDefhealth -= 20;
+					(int)gameObject.GetComponent<Wegfindung>().target.GetComponentInParent<KIDefController> ().KIDefhealth -= 20;
 				}
 			}
 			yield return new WaitForSeconds (1);

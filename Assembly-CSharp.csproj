@@ -64,6 +64,8 @@
      <Compile Include="Assets\Stuffwar\01 Home\Scripts\Wegfindung.cs" />
      <Compile Include="Assets\Stuffwar\01 Home\Scripts\Wegpunkt.cs" />
      <Compile Include="Assets\Stuffwar\01 Home\Scripts\ZahnradRotater.cs" />
+     <Compile Include="Assets\test.cs" />
+     <Compile Include="Assets\test2.cs" />
      <None Include="Assets\Plugins\AstarPathfindingProject\Plugins\DotNetZip\DotNetZipLicense.txt" />
      <None Include="Assets\Plugins\AstarPathfindingProject\ExampleScenes\Materials\Projector Multiply.shader" />
      <None Include="Assets\Plugins\AstarPathfindingProject\ExampleScenes\Materials\DiffuseAlwaysVisible.shader" />
