@@ -25,10 +25,11 @@ public class EnemySpawn : MonoBehaviour
 	void spawn()
 	{
 		v = spawnpoint.position;
-		for (int i = 0; i < 1; i++) 
+		for (int i = 0; i < 4
+			; i++) 
 		{
 			Instantiate (spawnthing, v , spawnpoint.rotation);
-			v.x += 20;
+			v.x += 5;
 		}
 	}
 			

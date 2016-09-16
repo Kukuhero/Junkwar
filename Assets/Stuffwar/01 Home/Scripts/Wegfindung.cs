@@ -30,8 +30,8 @@ public class Wegfindung : MonoBehaviour {
 	void Update () 
 	{
 		//print (currenttarget);
-
-			transform.position += (currenttarget.position - transform.position) * speed * Time.deltaTime;
+		targetdistance = Vectorlaenge(Vectorberechnung(transform.position, currenttarget.transform.position));
+		transform.position += (currenttarget.position - transform.position) * (1/targetdistance) * speed * Time.deltaTime;
 		print (target);
 	}
 
@@ -47,9 +47,14 @@ public class Wegfindung : MonoBehaviour {
 		{
 			switch (hit.collider.tag) 
 			{
-			case("target"):
+			case("Haus"):
 				print ("bewegen");
 				currenttarget = target;
+				break;
+
+			case("Enemy"):
+				print ("raycasthitEnemy");
+				currenttarget = hit.transform;
 				break;
 			
 			case ("Wegpunkt"):
@@ -74,6 +79,12 @@ public class Wegfindung : MonoBehaviour {
 						case("Basic Ground"):
 							print ("ground");
 							break;
+
+						case("Enemy"):
+							print ("raycasthitEnemy");
+							currenttarget = hit.transform;
+							break;
+
 						default:
 							print ("Weg versperrt2");
 							Wegfinden (hit.collider.gameObject);
@@ -130,9 +141,18 @@ public class Wegfindung : MonoBehaviour {
 					ii++;
 				}
 			}
-			if (ii == Wegpunkte.Length-1) {
-				print ("true");
-				currenttarget = Wegpunkte [2];
+			print (ii + "anzahlii");
+			if (ii == 4) {
+				print ("keinwegfrei");
+				RaycastHit hit;
+				targetdistance = Vectorlaenge (Vectorberechnung (transform.position, Wegpunkte[ikleinstestotaldistance].position));
+				Vector3 ray =  Wegpunkte[ikleinstestotaldistance].position - transform.position;
+				Debug.DrawRay (transform.position, ray, Color.red, 3f);
+				if (Physics.Raycast (transform.position, ray, out hit)) {
+					currenttarget = hit.transform;
+					print ("inifii"+hit.transform);
+				}
+				//currenttarget = Wegpunkte [2];
 			} else {
 				print ("false "+ii+" "+Wegpunkte.Length);
 				currenttarget = Wegpunkte [ikleinstestotaldistance];
@@ -170,7 +190,7 @@ public class Wegfindung : MonoBehaviour {
 							izweitkleinstestotaldistance = i;
 						}
 					}
-					print (WegpunkteArray [i].totaldistance_aus_Array ());
+
 				}
 			}
 			if (izweitkleinstestotaldistance == 0) 
@@ -212,9 +232,9 @@ public class Wegfindung : MonoBehaviour {
 				return true;
 			} else 
 			{
-				if (hit.transform.gameObject.tag == "triger") 
+				if (hit.transform.gameObject.tag == "Enemy") 
 				{
-					print("Targethit");
+					print("EnemyraycastWegpunkthit");
 					return true;
 				} else {
 					print ("false " + hit.transform.gameObject);
@@ -232,9 +252,15 @@ public class Wegfindung : MonoBehaviour {
 
 	}
 
+
+
 	void OnTriggerEnter(Collider other)
 	{
 		print ("inTrigger"+other.transform.gameObject);
+		if (other.tag == "plant") 
+		{
+			print ("planttrigger");
+		}
 		if (other.gameObject.transform == currenttarget) 
 		{
 			print ("istTarget");
@@ -249,6 +275,55 @@ public class Wegfindung : MonoBehaviour {
 			Wegfinden (collision.gameObject);
 		} 
 	}*/
+
 }
 
-	
+class Wegpunkt
+{
+	private Vector3 position;
+	private float totaldistance;
+	private bool wegfrei;
+	private float Entfernung;
+	private float distancetotarget;
+
+	public void Wegpunkte_in_Array(Vector3 position2, float totaldistance2, bool wegfrei2, float Entfernung2, float distancetotarget2)
+	{
+		position = position2;
+		totaldistance = totaldistance2;
+		wegfrei = wegfrei2;
+		Entfernung = Entfernung2;
+		distancetotarget = distancetotarget2;
+
+	}
+
+
+	public Vector3 Position_aus_Array ()
+	{
+		return position;
+
+	}
+
+	public float totaldistance_aus_Array ()
+	{
+		return totaldistance;
+
+	}
+
+	public bool wegfrei_aus_Array ()
+	{
+		return wegfrei;
+
+	}
+
+	public float Entfernung_aus_Array ()
+	{
+		return Entfernung;
+
+	}
+
+	public float distancetotarget_aus_Array ()
+	{
+		return distancetotarget;
+
+	}
+}

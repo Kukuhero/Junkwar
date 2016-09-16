@@ -2,14 +2,13 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Stuffwar/01 Home/Scripts/Wegfindung.cs">
     <Files>
-      <File FileName="Assets/Stuffwar/01 Home/Scripts/Wegfindung.cs" Line="1" Column="1" />
-      <File FileName="Assets/Stuffwar/01 Home/Scripts/EnemySpawn.cs" Line="1" Column="1" />
+      <File FileName="Assets/Stuffwar/01 Home/Scripts/Wegfindung.cs" Line="109" Column="4" />
+      <File FileName="Assets/Stuffwar/01 Home/Scripts/EnemySpawn.cs" Line="28" Column="24" />
       <File FileName="Assets/Stuffwar/01 Home/Scripts/StromRotater.cs" Line="1" Column="1" />
       <File FileName="Assets/Stuffwar/01 Home/Scripts/Stromspawn.cs" Line="1" Column="1" />
       <File FileName="Assets/Stuffwar/01 Home/Scripts/CamaraController.cs" Line="1" Column="1" />
       <File FileName="Assets/Stuffwar/01 Home/Scripts/Bambusprojektil.cs" Line="1" Column="1" />
       <File FileName="Assets/Stuffwar/01 Home/Scripts/Tomate.cs" Line="1" Column="1" />
-      <File FileName="Assets/Stuffwar/01 Home/Scripts/Wegpunkt.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

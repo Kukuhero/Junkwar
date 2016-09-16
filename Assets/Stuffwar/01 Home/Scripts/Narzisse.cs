@@ -73,9 +73,9 @@ public class Narzisse : MonoBehaviour {
 	}
 	IEnumerator wait()
 	{
-		while (true) {
+		//while (true) {
 			while (shoot) {
-					
+			print ("inwhileshoot");
 				if (Mathf.Abs(narzisse.transform.rotation.y) <= Mathf.Abs(Quaternion.LookRotation (transform.position - target [0].transform.position).y * 1.1f) && Mathf.Abs(narzisse.transform.rotation.y) >= Mathf.Abs(Quaternion.LookRotation (transform.position - target [0].transform.position).y * 0.9f)) {
 					Shoot ();
 				}
@@ -85,7 +85,7 @@ public class Narzisse : MonoBehaviour {
 			}
 			yield return new WaitForSeconds (0.01f);
 		}
-	}
+	//}
 
 	void Shoot()
 	{

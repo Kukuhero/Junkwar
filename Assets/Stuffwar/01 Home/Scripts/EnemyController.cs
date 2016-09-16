@@ -11,6 +11,7 @@ public class EnemyController : MonoBehaviour {
 	private Vector3 screenPos;
 	private int Position = 30;
 	public int maxhealth = 100;
+	public GameObject Zahnrad;
 
 	// Use this for initialization
 	void Start () 
@@ -27,6 +28,11 @@ public class EnemyController : MonoBehaviour {
 		if (health <= 0) 
 		{
 			Destroy (gameObject);
+			if (Random.Range(0f, 1f) <= 0.1f) 
+			{
+				Instantiate (Zahnrad, transform.position, gameObject.transform.rotation );
+			}
+
 		}
 			
 	}
