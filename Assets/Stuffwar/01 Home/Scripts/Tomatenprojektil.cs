@@ -35,7 +35,7 @@ public class Tomatenprojektil : MonoBehaviour {
 	IEnumerator Projektilzerstoerung()
 	{
 		while (true) {
-			new WaitForSeconds (5);
+			yield return new WaitForSeconds (5);
 			Destroy (transform.gameObject);
 		}
 	}

@@ -23,17 +23,31 @@ public class CamaraController : MonoBehaviour {
 			Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 			if (Physics.Raycast (ray, out hit, 80f)) 
 			{
-				if (hit.collider.tag == "Strom") 
+				print (hit.collider.gameObject);
+				switch(hit.collider.tag) 
 				{
+				case("Strom"):
 					Destroy (hit.transform.gameObject);
 
-						if (Batterie.maxStrom >= Userinterface.Strom + 10) 
-						{
-							Userinterface.Strom += 10;
-						} else {
+					if (Batterie.maxStrom >= Userinterface.Strom + 10) {
+						Userinterface.Strom += 10;
+					} else {
 						Userinterface.Strom = Batterie.maxStrom;
-							
-						}
+					}
+					break;
+
+				case("Zahnrad"):
+					Destroy (hit.transform.gameObject);
+					HouseController.Zahnräder += 1;
+					break;
+
+				case("Batterie"):
+					Batterie.OnGuibool = true;
+					break;
+
+				default:
+					Batterie.OnGuibool = false;
+					break;
 					}
 				}
 			}

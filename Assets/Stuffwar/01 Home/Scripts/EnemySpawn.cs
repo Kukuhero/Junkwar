@@ -15,20 +15,14 @@ public class EnemySpawn : MonoBehaviour
 
 	IEnumerator Wait() 
 	{
-		spawn ();
-		yield return new WaitForSeconds (8);
-		//spawn ();
-		yield return new WaitForSeconds (8);
-		//spawn ();
-		}	
+		
+		yield return new WaitForSeconds (0.2f);
 
-	void spawn()
-	{
 		v = spawnpoint.position;
-		for (int i = 0; i < 4
-			; i++) 
+		for (int i = 0; i < 10; i++) 
 		{
 			Instantiate (spawnthing, v , spawnpoint.rotation);
+			yield return new WaitForSeconds (0.2f);
 			v.x += 5;
 		}
 	}

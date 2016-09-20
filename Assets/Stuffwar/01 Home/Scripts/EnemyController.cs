@@ -12,23 +12,28 @@ public class EnemyController : MonoBehaviour {
 	private int Position = 30;
 	public int maxhealth = 100;
 	public GameObject Zahnrad;
+	private float Initiatedspeed;
+	private bool inTriggerEnemy = false;
 
 	// Use this for initialization
 	void Start () 
 	{
 		gameObject.GetComponent<Wegfindung>().target = House.transform;
 		StartCoroutine (makeDamage ());
+		Initiatedspeed = gameObject.GetComponent<Wegfindung> ().speed;
 
 	}
 
 	// Update is called once per frame
 	void Update ()
 	{	
-		
+		//print (gameObject.GetComponent<Wegfindung>().speed);
+		gameObject.transform.rotation = Quaternion.RotateTowards (gameObject.transform.rotation, Quaternion.LookRotation (new Vector3 (-(transform.position.x - gameObject.GetComponent<Wegfindung>().currenttarget.position.x), 0f,-( transform.position.z - gameObject.GetComponent<Wegfindung>().currenttarget.position.z))), 100f * Time.deltaTime);
+	
 		if (health <= 0) 
 		{
 			Destroy (gameObject);
-			if (Random.Range(0f, 1f) <= 0.1f) 
+			if (Random.Range(0f, 1f) <= 1f) 
 			{
 				Instantiate (Zahnrad, transform.position, gameObject.transform.rotation );
 			}
@@ -52,7 +57,7 @@ public class EnemyController : MonoBehaviour {
 
 		case "Haus":
 			
-			gameObject.GetComponent<Wegfindung>().target = other.gameObject.transform;
+			gameObject.GetComponent<Wegfindung>().currenttarget = gameObject.transform;
 			StartCoroutine (makeDamageHouse ());
 
 			break;
@@ -61,6 +66,17 @@ public class EnemyController : MonoBehaviour {
 			gameObject.GetComponent<Wegfindung>().target = other.gameObject.transform;
 
 			break;*/
+
+		case "Enemy":
+			
+			if (!inTriggerEnemy) 
+			{
+				inTriggerEnemy = true;
+				gameObject.GetComponent<Wegfindung> ().speed -= Random.Range (1, 2);
+			}
+			break;
+
+		
 		
 		}
 	}
@@ -74,6 +90,11 @@ public class EnemyController : MonoBehaviour {
 			break;
 
 		case "Haus":
+			break;
+
+		case "Enemy":
+			inTriggerEnemy = false;
+			gameObject.GetComponent<Wegfindung> ().speed = Initiatedspeed;
 			break;
 		}
 	}

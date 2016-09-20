@@ -9,6 +9,7 @@ public class HouseController : MonoBehaviour {
 	private int Position = 30;
 	public Texture2D healthTexture;
 	public GameObject House;
+	public static int Zahnräder;
 	
 	// Update is called once per frame
 	void Update () {
