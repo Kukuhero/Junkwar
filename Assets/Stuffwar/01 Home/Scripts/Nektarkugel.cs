@@ -26,7 +26,7 @@ public class Nektarkugel : MonoBehaviour {
 		switch (other.tag) 
 		{
 		case "Enemy":
-			(int)Narzisse.target[0].GetComponent<EnemyController>().health -= 50;
+			(int)Narzisse.target[0].GetComponent<EnemyController>().health -= 20;
 			Destroy (transform.gameObject);
 			break;
 		}

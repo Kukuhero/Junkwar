@@ -10,7 +10,7 @@ public class Wegfindung : MonoBehaviour {
 	private float[] VectorlaengeArray = new float[15];
 	private Wegpunkt[] WegpunkteArray = new Wegpunkt[15];
 	private float kleinstestotaldistance;
-	private int ikleinstestotaldistance;
+	private int ikleinstestotaldistance = 1;
 	private float zweitkleinstestotaldistance;
 	private int izweitkleinstestotaldistance;
 	public Transform currenttarget;
@@ -45,10 +45,10 @@ public class Wegfindung : MonoBehaviour {
 		targetdistance = Vectorlaenge (Vectorberechnung (transform.position, target.transform.position));
 		Vector3 ray = target.transform.position-transform.position;
 		Debug.DrawRay (transform.position, ray, Color.blue, 3f);
-		int layerMask = 1 << 9;
-		layerMask = ~layerMask;
-		print (layerMask);
-		if (Physics.Raycast (transform.position,ray, out hit, targetdistance, layerMask)) 
+		int layerMask = 1 << 10;
+		//layerMask = ~layerMask;
+		print (GetComponent<Collider>().bounds.size);
+		if (Physics.BoxCast(transform.position,GetComponent<Collider>().bounds.size/2,ray,out hit ,transform.rotation,targetdistance,layerMask)) 
 		{
 			print ("inif5");
 			switch (hit.collider.tag) 
@@ -58,53 +58,13 @@ public class Wegfindung : MonoBehaviour {
 				currenttarget = target;
 				break;
 
-			/*case("Enemy"):
-				print ("raycasthitEnemy");
-				currenttarget = hit.transform;
-				break;*/
-			
-			/*case ("Wegpunkt"):
-				print ("Wegpunkt hit");	
-				while (Wegpunktvar) {
-					targetdistance = Vectorlaenge (Vectorberechnung (hit.collider.transform.position, target.transform.position));
-					ray = target.transform.position - hit.collider.transform.position;
-					Debug.DrawRay (hit.collider.transform.position, ray, Color.black, 3f);
-					if (Physics.Raycast (hit.collider.transform.position, ray, out hit, targetdistance)) {
-						switch (hit.collider.tag) {
-						case("target"):
-							print ("bewegen");
-							currenttarget = target;
-							Wegpunktvar = false;
-							break;
-
-						case ("Wegpunkt"):
-							print ("Wegpunkt hit");	
-							Wegpunktvar = true;
-							break;
-
-						case("Basic Ground"):
-							print ("ground");
-							break;
-
-						case("Enemy"):
-							print ("raycasthitEnemy");
-							currenttarget = hit.transform;
-							break;
-
-						default:
-							print ("Weg versperrt2");
-							Wegfinden (hit.collider.gameObject);
-							Wegpunktvar = false;
-							break;
-
-
-						}
-					}
-				}
-					break;*/
+			case("Hinderniss"):
+				print ("Weg versperrt2" + hit.collider.gameObject);
+				Wegfinden (hit.collider.gameObject);
+				break;
 				
 				default:
-				print ("Weg versperrt2");
+				print ("Weg versperrt2" + hit.collider.gameObject);
 				Wegfinden (hit.collider.gameObject);
 				break;
 
@@ -116,7 +76,7 @@ public class Wegfindung : MonoBehaviour {
 	}
 		
 
-	void Wegfinden(GameObject Hindernis)
+	public void Wegfinden(GameObject Hindernis)
 	{   
 		int ii = 0;
 		print (Hindernis);
@@ -132,9 +92,9 @@ public class Wegfindung : MonoBehaviour {
 			{
 				VectorlaengeArray [i] = Vectorlaenge (Vectorberechnung (transform.position, Wegpunkte [i].transform.position));
 				WegpunkteArray [i] = new Wegpunkt ();
-				WegpunkteArray [i].Wegpunkte_in_Array (Wegpunkte [i].transform.position, VectorlaengeArray [i] + Vectorlaenge (Vectorberechnung (Wegpunkte [i].transform.position, target.transform.position)), wegfreiberechnung (Wegpunkte [i].transform.position), Vectorlaenge (Vectorberechnung (transform.position, Wegpunkte [i].transform.position)), Vectorlaenge (Vectorberechnung (Wegpunkte [i].transform.position, target.transform.position)));
+				WegpunkteArray [i].Wegpunkte_in_Array (Wegpunkte [i].transform.position, VectorlaengeArray [i] + Vectorlaenge (Vectorberechnung (Wegpunkte [i].transform.position, target.transform.position)), wegfreiberechnung (Wegpunkte [i].transform.position), Vectorlaenge (Vectorberechnung (transform.position, Wegpunkte [i].transform.position)), Vectorlaenge (Vectorberechnung (Wegpunkte [i].transform.position, target.transform.position)),Wegpunkte[i].tag);
 
-				if (WegpunkteArray [i].wegfrei_aus_Array ()) {
+				if (WegpunkteArray [i].wegfrei_aus_Array () &&  "Wegpunkt"== Wegpunkte[i].tag) {
 				
 					if (WegpunkteArray [i].totaldistance_aus_Array () < kleinstestotaldistance) {
 						kleinstestotaldistance = WegpunkteArray [i].totaldistance_aus_Array ();
@@ -148,23 +108,25 @@ public class Wegfindung : MonoBehaviour {
 				}
 			}
 			//print (ii + "anzahlii");
-			if (ii == 4) {
-				print ("keinwegfrei");
+			if (ii == WegpunkteArray.Length) {
+				//print (Wegpunkte[ikleinstestotaldistance].position);
+				//print (ikleinstestotaldistance);
 				RaycastHit hit;
 				targetdistance = Vectorlaenge (Vectorberechnung (transform.position, Wegpunkte[ikleinstestotaldistance].position));
 				Vector3 ray =  Wegpunkte[ikleinstestotaldistance].position - transform.position;
-				Debug.DrawRay (transform.position, ray, Color.red, 3f);
-				int layerMask = 1 << 9;
-				layerMask = ~layerMask;
-				if (Physics.Raycast (transform.position, ray, out hit, layerMask)) {
-					currenttarget = hit.transform;
+				Debug.DrawRay (transform.position, ray, Color.green, 3f);
+				int layerMask = 1 << 10;
+				//layerMask = ~layerMask;
+				print (Physics.Raycast (transform.position, ray, out hit, layerMask));
+				if (Physics.BoxCast(transform.position,GetComponent<Collider>().bounds.size/2,ray,out hit ,transform.rotation,targetdistance,layerMask)) {
+					Wegfinden (hit.transform.gameObject);
 					print ("inifii"+hit.transform);
 				}
 				//currenttarget = Wegpunkte [2];
 			} else {
 				print ("false "+ii+" "+Wegpunkte.Length);
 				currenttarget = Wegpunkte [ikleinstestotaldistance];
-			}
+			} 
 		} 
 		else 
 		{
@@ -176,10 +138,10 @@ public class Wegfindung : MonoBehaviour {
 			for (i = 1; i < Wegpunkte.Length; i++) 
 			{
 				VectorlaengeArray [i] = Vectorlaenge (Vectorberechnung (transform.position, Wegpunkte [i].transform.position));
-				WegpunkteArray [i].Wegpunkte_in_Array (Wegpunkte [i].transform.position, VectorlaengeArray [i] + Vectorlaenge (Vectorberechnung (Wegpunkte [i].transform.position, target.transform.position)), wegfreiberechnung (Wegpunkte [i].transform.position), Vectorlaenge (Vectorberechnung (transform.position, Wegpunkte [i].transform.position)), Vectorlaenge (Vectorberechnung (Wegpunkte [i].transform.position, target.transform.position)));
+				WegpunkteArray [i].Wegpunkte_in_Array (Wegpunkte [i].transform.position, VectorlaengeArray [i] + Vectorlaenge (Vectorberechnung (Wegpunkte [i].transform.position, target.transform.position)), wegfreiberechnung (Wegpunkte [i].transform.position), Vectorlaenge (Vectorberechnung (transform.position, Wegpunkte [i].transform.position)), Vectorlaenge (Vectorberechnung (Wegpunkte [i].transform.position, target.transform.position)), Wegpunkte[i].tag);
 				//WegpunkteArray [ikleinstestotaldistance].Wegpunkte_in_Array (Wegpunkte [ikleinstestotaldistance].transform.position, 300f, wegfreiberechnung ( Wegpunkte [ikleinstestotaldistance].transform.position), Vectorlaenge (Vectorberechnung (transform.position, Wegpunkte [ikleinstestotaldistance].transform.position)), Vectorlaenge (Vectorberechnung (Wegpunkte [ikleinstestotaldistance].transform.position, target.transform.position)));
 
-				if (WegpunkteArray [i].wegfrei_aus_Array ()) 
+				if (WegpunkteArray [i].wegfrei_aus_Array () && Wegpunkte[i].tag == "Wegpunkt") 
 				{
 					print("inif"+i);
 					if (WegpunkteArray [i].totaldistance_aus_Array () < kleinstestotaldistance) 
@@ -231,9 +193,9 @@ public class Wegfindung : MonoBehaviour {
 		targetdistance = Vectorlaenge (Vectorberechnung (transform.position, Wegpunktposition));
 		Vector3 ray =  Wegpunktposition - transform.position;
 		Debug.DrawRay (transform.position, ray, Color.red, 3f);
-		int layerMask = 1 << 9;
-		layerMask = ~layerMask;
-		if (Physics.Raycast (transform.position, ray, out hit, targetdistance, layerMask)) 
+		int layerMask = 1 << 10;
+		//layerMask = ~layerMask;
+		if (Physics.BoxCast(transform.position,GetComponent<Collider>().bounds.size/2,ray,out hit ,transform.rotation,targetdistance,layerMask)) 
 		{
 			
 			if (hit.transform.gameObject.transform.position == Wegpunktposition) 
@@ -295,14 +257,16 @@ class Wegpunkt
 	private bool wegfrei;
 	private float Entfernung;
 	private float distancetotarget;
+	private string tag;
 
-	public void Wegpunkte_in_Array(Vector3 position2, float totaldistance2, bool wegfrei2, float Entfernung2, float distancetotarget2)
+	public void Wegpunkte_in_Array(Vector3 position2, float totaldistance2, bool wegfrei2, float Entfernung2, float distancetotarget2, string tag2)
 	{
 		position = position2;
 		totaldistance = totaldistance2;
 		wegfrei = wegfrei2;
 		Entfernung = Entfernung2;
 		distancetotarget = distancetotarget2;
+		tag = tag2;
 
 	}
 
@@ -335,5 +299,9 @@ class Wegpunkt
 	{
 		return distancetotarget;
 
+	}
+	public string Tag_aus_Array()
+	{
+		return tag;
 	}
 }

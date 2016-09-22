@@ -35,7 +35,7 @@ public class EnemyController : MonoBehaviour {
 			Destroy (gameObject);
 			if (Random.Range(0f, 1f) <= 1f) 
 			{
-				Instantiate (Zahnrad, transform.position, gameObject.transform.rotation );
+				Instantiate (Zahnrad, new Vector3(transform.position.x,1f,transform.position.z), gameObject.transform.rotation );
 			}
 
 		}
@@ -74,6 +74,10 @@ public class EnemyController : MonoBehaviour {
 				inTriggerEnemy = true;
 				gameObject.GetComponent<Wegfindung> ().speed -= Random.Range (1, 2);
 			}
+			break;
+
+		case "Zahnrad":
+			gameObject.GetComponent<Wegfindung> ().Wegfinden (other.gameObject);
 			break;
 
 		
