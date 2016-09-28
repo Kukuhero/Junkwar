@@ -16,26 +16,31 @@ public class EnemyController : MonoBehaviour {
 	private bool inTriggerEnemy = false;
 
 	// Use this for initialization
-	void Start () 
+	void Awake () 
 	{
-		gameObject.GetComponent<Wegfindung>().target = House.transform;
+		gameObject.transform.parent.GetComponent<Wegfindung>().target = House.transform;
+		print(gameObject.transform.parent.GetComponent<Wegfindung>().target);
 		StartCoroutine (makeDamage ());
-		Initiatedspeed = gameObject.GetComponent<Wegfindung> ().speed;
-
+		Initiatedspeed = gameObject.transform.parent.GetComponent<Wegfindung> ().speed;
 	}
 
 	// Update is called once per frame
 	void Update ()
 	{	
+
 		//print (gameObject.GetComponent<Wegfindung>().speed);
-		gameObject.transform.rotation = Quaternion.RotateTowards (gameObject.transform.rotation, Quaternion.LookRotation (new Vector3 (-(transform.position.x - gameObject.GetComponent<Wegfindung>().currenttarget.position.x), 0f,-( transform.position.z - gameObject.GetComponent<Wegfindung>().currenttarget.position.z))), 100f * Time.deltaTime);
+		gameObject.transform.parent.transform.rotation = Quaternion.RotateTowards 
+			(gameObject.transform.parent.transform.rotation, 
+			Quaternion.LookRotation (new Vector3 (-(gameObject.transform.parent.transform.position.x - gameObject.transform.parent.GetComponent<Wegfindung>().currenttarget.position.x),0f,-( gameObject.transform.parent.transform.position.z - gameObject.transform.parent.GetComponent<Wegfindung>().currenttarget.position.z))),
+				100f * Time.deltaTime);
 	
 		if (health <= 0) 
 		{
-			Destroy (gameObject);
+			Destroy (gameObject.transform.parent.gameObject);
+			//Destroy(gameObject);
 			if (Random.Range(0f, 1f) <= 1f) 
 			{
-				Instantiate (Zahnrad, new Vector3(transform.position.x,1f,transform.position.z), gameObject.transform.rotation );
+				Instantiate (Zahnrad, new Vector3(gameObject.transform.parent.transform.position.x,1f,gameObject.transform.parent.transform.position.z), gameObject.transform.parent.transform.rotation );
 			}
 
 		}
@@ -48,16 +53,16 @@ public class EnemyController : MonoBehaviour {
 		switch (other.tag) 
 		{
 		case "KIDef":
-			offset = other.gameObject.transform.position - transform.position;
-			transform.rotation = Quaternion.LookRotation (offset);
-			gameObject.GetComponent<Wegfindung>().target = other.gameObject.transform;
+			offset = other.gameObject.transform.position - gameObject.transform.parent.transform.position;
+			gameObject.transform.parent.transform.rotation = Quaternion.LookRotation (offset);
+			gameObject.transform.parent.GetComponent<Wegfindung>().target = other.gameObject.transform;
 			damage = true;
 
 			break;
 
 		case "Haus":
 			
-			gameObject.GetComponent<Wegfindung>().currenttarget = gameObject.transform;
+			gameObject.gameObject.transform.parent.GetComponent<Wegfindung>().currenttarget = gameObject.gameObject.transform.parent.transform;
 			StartCoroutine (makeDamageHouse ());
 
 			break;
@@ -72,12 +77,12 @@ public class EnemyController : MonoBehaviour {
 			if (!inTriggerEnemy) 
 			{
 				inTriggerEnemy = true;
-				gameObject.GetComponent<Wegfindung> ().speed -= Random.Range (1, 2);
+				gameObject.transform.parent.GetComponent<Wegfindung> ().speed -= Random.Range (1, 2);
 			}
 			break;
 
 		case "Zahnrad":
-			gameObject.GetComponent<Wegfindung> ().Wegfinden (other.gameObject);
+			gameObject.transform.parent.GetComponent<Wegfindung> ().Wegfinden (other.gameObject);
 			break;
 
 		
@@ -98,7 +103,7 @@ public class EnemyController : MonoBehaviour {
 
 		case "Enemy":
 			inTriggerEnemy = false;
-			gameObject.GetComponent<Wegfindung> ().speed = Initiatedspeed;
+			gameObject.transform.parent.GetComponent<Wegfindung> ().speed = Initiatedspeed;
 			break;
 		}
 	}
@@ -107,7 +112,7 @@ public class EnemyController : MonoBehaviour {
 	{
 		if (health != maxhealth) 
 		{
-			screenPos = Camera.main.WorldToScreenPoint (transform.position);
+			screenPos = Camera.main.WorldToScreenPoint (gameObject.transform.parent.transform.position);
 			GUI.DrawTexture (new Rect (screenPos.x - 40, Screen.height - screenPos.y - Position, health / 2, 5), healthTexture);
 			GUI.color = Color.black;
 			GUI.Label (new Rect (screenPos.x - 35, Screen.height - screenPos.y - Position, 50, 30), "" + health + "/" + maxhealth);
@@ -131,12 +136,12 @@ public class EnemyController : MonoBehaviour {
 	{
 		
 		while (true) {
-			if (gameObject.GetComponent<Wegfindung>().target == null) {
+			if (gameObject.GetComponentInParent<Wegfindung>().target == null) {
 				damage = false;
 			} else {
 				if (damage == true) 
 				{
-					(int)gameObject.GetComponent<Wegfindung>().target.GetComponentInParent<KIDefController> ().KIDefhealth -= 20;
+					(int)gameObject.GetComponentInParent<Wegfindung>().target.GetComponentInParent<KIDefController> ().KIDefhealth -= 20;
 				}
 			}
 			yield return new WaitForSeconds (1);

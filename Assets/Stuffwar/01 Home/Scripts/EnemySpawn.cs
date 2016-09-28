@@ -19,7 +19,7 @@ public class EnemySpawn : MonoBehaviour
 		yield return new WaitForSeconds (0.2f);
 
 		v = spawnpoint.position;
-		for (int i = 0; i < 5; i++) 
+		for (int i = 0; i < 10; i++) 
 		{
 			Instantiate (spawnthing, v , spawnpoint.rotation);
 			yield return new WaitForSeconds (0.2f);
