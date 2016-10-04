@@ -47,6 +47,7 @@
   <ItemGroup>
      <Compile Include="Assets\GameObjectInitalisierer.cs" />
      <Compile Include="Assets\Gameobject.cs" />
+     <Compile Include="Assets\HeldController.cs" />
      <Compile Include="Assets\LoadGameObject.cs" />
      <Compile Include="Assets\Stuffwar\01 Home\Scripts\Bambus.cs" />
      <Compile Include="Assets\Stuffwar\01 Home\Scripts\Bambusprojektil.cs" />
