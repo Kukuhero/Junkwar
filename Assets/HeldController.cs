@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class HeldController : MonoBehaviour {
-    private int speed = 5;
+    private float speed = 5f;
     private Vector3 nRichtungsvector;
 
 	// Use this for initialization
@@ -14,27 +14,29 @@ public class HeldController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
     {
+        
         RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
         int layerMask = 1 << 8;
         Debug.DrawRay(ray.origin,ray.direction * 100, Color.black, 2f, true);
         if (Physics.Raycast(ray, out hit, 3000f,layerMask))
         {
-            //print(Quaternion.RotateTowards(gameObject.transform.rotation, Quaternion.LookRotation(new Vector3(hit.point.x, /*gameObject.transform.position.y*/0f, hit.point.z)),100f* Time.deltaTime));
-            gameObject.transform.rotation = Quaternion.RotateTowards(gameObject.transform.rotation, 
-                                            Quaternion.LookRotation(new Vector3(hit.point.x, 0f, hit.point.z)),200f* Time.deltaTime);
+            gameObject.transform.LookAt(new Vector3(hit.point.x,transform.position.y, hit.point.z));
+            /*gameObject.transform.rotation = Quaternion.RotateTowards(gameObject.transform.rotation, 
+                                            Quaternion.LookRotation(new Vector3(hit.point.x, 0f, hit.point.z)),200f* Time.deltaTime);*/
 
             nRichtungsvector = Vectornormieren(Vectorberechnung(gameObject.transform.position, hit.point));
-           // print(nRichtungsvector);
+            Normalenberechnung(nRichtungsvector);
+            Debug.DrawLine(gameObject.transform.position, hit.point);
+            Debug.DrawRay(transform.position, Normalenberechnung(nRichtungsvector)*30f,Color.red);
         }
 
         if(Input.anyKey)
         {
-            gameObject.transform.position = 
-                new Vector3(gameObject.transform.position.x + (Input.GetAxis("Horizontal") + nRichtungsvector.x) * Time.deltaTime * speed, 
-                gameObject.transform.position.y,
-                    gameObject.transform.position.z + (Input.GetAxis("Vertical") + nRichtungsvector.z) * Time.deltaTime * speed);
-            print(Input.GetAxis("Horizontal"));
+            gameObject.transform.position += 
+                new Vector3((Input.GetAxis("Vertical") * nRichtungsvector.x) + (Input.GetAxis("Horizontal")* Normalenberechnung(nRichtungsvector).x), 0,
+                    (Input.GetAxis("Vertical") * nRichtungsvector.z) + (Input.GetAxis("Horizontal")* Normalenberechnung(nRichtungsvector).z))*speed * Time.deltaTime;
+            //print(/*nRichtungsvector= */ Mathf.Sqrt (nRichtungsvector.x * nRichtungsvector.x + nRichtungsvector.y * nRichtungsvector.y + nRichtungsvector.z * nRichtungsvector.z));
         }
 	}
 
@@ -43,6 +45,12 @@ public class HeldController : MonoBehaviour {
         Vector3 vector = new Vector3(Ziel.x - Start.x, Ziel.y - Start.y, Ziel.z - Start.z);
         return vector;
 
+    }
+
+    Vector3 Normalenberechnung(Vector3 vector)
+    {
+        print(vector.z + vector.y - vector.x);
+        return vector = new Vector3(vector.z, 0f, -vector.x);
     }
 
     Vector3 Vectornormieren(Vector3 vector)
