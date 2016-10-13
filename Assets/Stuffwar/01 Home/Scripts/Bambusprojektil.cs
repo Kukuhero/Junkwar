@@ -26,7 +26,7 @@ public class Bambusprojektil : MonoBehaviour {
 		switch (other.tag) 
 		{
 		case "Enemy":
-			(int)Bambus.target[0].GetComponent<EnemyController>().health -= 20;
+			(int)Bambus.target[0].GetComponent<Health>().health -= 20;
 			Destroy (transform.gameObject);
 			break;
 		}

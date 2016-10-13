@@ -31,16 +31,16 @@ public class Wegfindung : MonoBehaviour {
 	void Update () 
 	{
 		
-		print (currenttarget);
+		//print (currenttarget);
 		targetdistance = Vectorlaenge(Vectorberechnung(transform.position, currenttarget.transform.position));
 		transform.position += (currenttarget.position - transform.position) * (1/targetdistance) * speed * Time.deltaTime;
-		////print (target);
+		//////print (target);
 	}
 
 	void FreierWeg()
 	{
 		StopCoroutine(Triggerabfrage());
-		//print ("infreierWeg");
+		////print ("infreierWeg");
 		Wegpunktvar = true;
 		RaycastHit hit;
 		targetdistance = Vectorlaenge (Vectorberechnung (transform.position, target.transform.position));
@@ -48,24 +48,24 @@ public class Wegfindung : MonoBehaviour {
 		Debug.DrawRay (transform.position, ray, Color.blue, 3f);
 		int layerMask = 1 << 10;
 		//layerMask = ~layerMask;
-		////print (GetComponent<Collider>().bounds.size);
+		//////print (GetComponent<Collider>().bounds.size);
 		if (Physics.BoxCast(transform.position,GetComponent<Collider>().bounds.size/2.3f,ray,out hit ,transform.rotation,targetdistance,layerMask)) 
 		{
-			//print ("inif5");
+			////print ("inif5");
 			switch (hit.collider.tag) 
 			{
 			case("Haus"):
-				print ("Hausteil " + hit.collider.gameObject);
+				//print ("Hausteil " + hit.collider.gameObject);
 				currenttarget = target;
 				break;
 
 			case("Hinderniss"):
-				print ("Weg versperrt" + hit.collider.gameObject);
+				//print ("Weg versperrt" + hit.collider.gameObject);
 				Wegfinden (hit.collider.gameObject);
 				break;
 				
 				default:
-				//print ("Weg versperrt2" + hit.collider.gameObject);
+				////print ("Weg versperrt2" + hit.collider.gameObject);
 				//Wegfinden (hit.collider.gameObject);
 				break;
 
@@ -80,12 +80,12 @@ public class Wegfindung : MonoBehaviour {
 	public void Wegfinden(GameObject Hindernis)
 	{   
 		int ii = 0;
-		//print (Hindernis);
-		//print ("inWegfinden");
+		////print (Hindernis);
+		////print ("inWegfinden");
 		Wegpunktenew = Hindernis.GetComponentsInChildren<Transform> ();
 		if (Wegpunkte[1].transform.position != Wegpunktenew[1].transform.position) 
 		{
-			////print ("neues Object");
+			//////print ("neues Object");
 			Wegpunkte = Hindernis.GetComponentsInChildren<Transform>();
 		
 			kleinstestotaldistance = 300f;
@@ -104,33 +104,33 @@ public class Wegfindung : MonoBehaviour {
 						ikleinstestotaldistance = i;
 					}
 
-					////print (WegpunkteArray [i].totaldistance_aus_Array ());
+					//////print (WegpunkteArray [i].totaldistance_aus_Array ());
 				}
 			}
-			//print (ii + "anzahlii" );
+			////print (ii + "anzahlii" );
 			if (ii == 0) {
-				////print (Wegpunkte[ikleinstestotaldistance].position);
-				////print (ikleinstestotaldistance);
+				//////print (Wegpunkte[ikleinstestotaldistance].position);
+				//////print (ikleinstestotaldistance);
 				RaycastHit hit;
 				targetdistance = Vectorlaenge (Vectorberechnung (transform.position, Wegpunkte[ikleinstestotaldistance].position));
 				Vector3 ray =  Wegpunkte[ikleinstestotaldistance].position - transform.position;
 				Debug.DrawRay (transform.position, ray, Color.green, 3f);
 				int layerMask = 1 << 10;
 				//layerMask = ~layerMask;
-				//print (Physics.Raycast (transform.position, ray, out hit, layerMask));
+				////print (Physics.Raycast (transform.position, ray, out hit, layerMask));
 				if (Physics.BoxCast(transform.position,GetComponent<Collider>().bounds.size/2.3f,ray,out hit ,transform.rotation,targetdistance,layerMask)) {
 					Wegfinden (hit.transform.gameObject);
-					//print ("inifii"+hit.transform);
+					////print ("inifii"+hit.transform);
 				}
 				//currenttarget = Wegpunkte [2];
 			} else {
-				//print ("false "+ii+" "+Wegpunkte.Length);
+				////print ("false "+ii+" "+Wegpunkte.Length);
 				currenttarget = Wegpunkte [ikleinstestotaldistance];
 			} 
 		} 
 		else 
 		{
-			////print ("gleiches Object");
+			//////print ("gleiches Object");
 			kleinstestotaldistance = 300f;
 			zweitkleinstestotaldistance = 300f;
 			izweitkleinstestotaldistance = 0;
@@ -143,7 +143,7 @@ public class Wegfindung : MonoBehaviour {
 
 				if (WegpunkteArray [i].wegfrei_aus_Array () && Wegpunkte[i].tag == "Wegpunkt") 
 				{
-					//print("inif"+i);
+					////print("inif"+i);
 					if (WegpunkteArray [i].totaldistance_aus_Array () < kleinstestotaldistance) 
 					{
 						zweitkleinstestotaldistance = kleinstestotaldistance;
@@ -153,7 +153,7 @@ public class Wegfindung : MonoBehaviour {
 
 					} else 
 					{
-						//print ("inelse");
+						////print ("inelse");
 						if (WegpunkteArray [i].totaldistance_aus_Array () < zweitkleinstestotaldistance) 
 						{
 							zweitkleinstestotaldistance = WegpunkteArray [i].totaldistance_aus_Array ();
@@ -169,7 +169,7 @@ public class Wegfindung : MonoBehaviour {
 			} 
 			else 
 			{
-				//print ("else + kleinstetotaldistance "+izweitkleinstestotaldistance);
+				////print ("else + kleinstetotaldistance "+izweitkleinstestotaldistance);
 				currenttarget = Wegpunkte [izweitkleinstestotaldistance];
 				//currenttarget = Wegpunkte [ikleinstestotaldistance];
 			}
@@ -201,17 +201,17 @@ public class Wegfindung : MonoBehaviour {
 			
 			if (hit.transform.gameObject.transform.position == Wegpunktposition) 
 			{
-				////print ("true "+hit.transform.gameObject);
+				//////print ("true "+hit.transform.gameObject);
 				return true;
 			} else 
 			{
 				if (hit.transform.gameObject.tag == "Enemy") 
 				{
-					//print("EnemyraycastWegpunkthit");
+					////print("EnemyraycastWegpunkthit");
 					return true;
 				} else {
-					////print ("false " + hit.transform.gameObject);
-					////print(hit.transform.gameObject.transform.position);
+					//////print ("false " + hit.transform.gameObject);
+					//////print(hit.transform.gameObject.transform.position);
 					return false;
 				}
 			}
@@ -219,7 +219,7 @@ public class Wegfindung : MonoBehaviour {
 		} 
 		else 
 		{
-			//print ("true");
+			////print ("true");
 			return true;
 		}
 
@@ -229,14 +229,14 @@ public class Wegfindung : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other)
 	{
-		////print ("inTrigger"+other.transform.gameObject);
+		//////print ("inTrigger"+other.transform.gameObject);
 		if (other.tag == "plant") 
 		{
-			//print ("planttrigger");
+			////print ("planttrigger");
 		}
 		if (other.gameObject.transform == currenttarget) 
 		{
-			//print ("istTarget");
+			////print ("istTarget");
 			//StartCoroutine (Triggerabfrage());
 			FreierWeg();
 		}
@@ -244,7 +244,7 @@ public class Wegfindung : MonoBehaviour {
 
 /*	void OnCollisionEnter(Collision collision)
 	{
-		//print (collision.gameObject);
+		////print (collision.gameObject);
 		if (collision.gameObject.tag != "Basic Ground") {
 			Wegfinden (collision.gameObject);
 		} 
@@ -255,14 +255,14 @@ public class Wegfindung : MonoBehaviour {
 		bool Coroutinebool = true; 
 		while (Coroutinebool)
 		{
-			print("inTriggerabfrage");
+			//print("inTriggerabfrage");
 			if (gameObject.transform.position.x <= currenttarget.position.x + 0.1f && gameObject.transform.position.z <= currenttarget.position.z+ 0.01f
 				&& gameObject.transform.position.x >= currenttarget.position.x - 0.1f && gameObject.transform.position.z >= currenttarget.position.z - 0.01f)
 			{
-				print(" inIfTriggerabfrage");
+				//print(" inIfTriggerabfrage");
 				FreierWeg();
 				Coroutinebool = false;
-				print("nicht break");
+				//print("nicht break");
 			}
 			yield return new WaitForSeconds(0.01f);
 		}

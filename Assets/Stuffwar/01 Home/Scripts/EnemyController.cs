@@ -6,11 +6,6 @@ public class EnemyController : MonoBehaviour {
 	private bool damage = false;
 	public GameObject House;
 	public GameObject KIDef;
-	public int health = 100;
-	public Texture2D healthTexture;
-	private Vector3 screenPos;
-	private int Position = 30;
-	public int maxhealth = 100;
 	public GameObject Zahnrad;
 	private float Initiatedspeed;
 	private bool inTriggerEnemy = false;
@@ -34,16 +29,7 @@ public class EnemyController : MonoBehaviour {
 			Quaternion.LookRotation (new Vector3 (-(gameObject.transform.parent.transform.position.x - gameObject.transform.parent.GetComponent<Wegfindung>().currenttarget.position.x),0f,-( gameObject.transform.parent.transform.position.z - gameObject.transform.parent.GetComponent<Wegfindung>().currenttarget.position.z))),
 				100f * Time.deltaTime);
 	
-		if (health <= 0) 
-		{
-			Destroy (gameObject.transform.parent.gameObject);
-			//Destroy(gameObject);
-			if (Random.Range(0f, 1f) <= 1f) 
-			{
-				Instantiate (Zahnrad, new Vector3(gameObject.transform.parent.transform.position.x,1f,gameObject.transform.parent.transform.position.z), gameObject.transform.parent.transform.rotation );
-			}
-
-		}
+		
 			
 	}
 		
@@ -108,16 +94,7 @@ public class EnemyController : MonoBehaviour {
 		}
 	}
 
-	void OnGUI()
-	{
-		if (health != maxhealth) 
-		{
-			screenPos = Camera.main.WorldToScreenPoint (gameObject.transform.parent.transform.position);
-			GUI.DrawTexture (new Rect (screenPos.x - 40, Screen.height - screenPos.y - Position, health / 2, 5), healthTexture);
-			GUI.color = Color.black;
-			GUI.Label (new Rect (screenPos.x - 35, Screen.height - screenPos.y - Position, 50, 30), "" + health + "/" + maxhealth);
-		}
-	}
+	
 
 	IEnumerator makeDamageHouse()
 	{

@@ -26,7 +26,7 @@ public class Tomatenprojektil : MonoBehaviour {
 		switch (other.tag) 
 		{
 		case "Enemy":
-			(int)Tomate.target[0].GetComponent<EnemyController>().health -= 20;
+			(int)Tomate.target[0].GetComponent<Health>().health -= 20;
 			Destroy (transform.gameObject);
 			break;
 		}

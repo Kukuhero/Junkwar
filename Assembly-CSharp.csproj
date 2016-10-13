@@ -45,8 +45,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Feinderkennung.cs" />
      <Compile Include="Assets\GameObjectInitalisierer.cs" />
      <Compile Include="Assets\Gameobject.cs" />
+     <Compile Include="Assets\Health.cs" />
      <Compile Include="Assets\HeldController.cs" />
      <Compile Include="Assets\LoadGameObject.cs" />
      <Compile Include="Assets\Stuffwar\01 Home\Scripts\Bambus.cs" />

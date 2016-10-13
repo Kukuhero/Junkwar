@@ -44,6 +44,10 @@ public class CamaraController : MonoBehaviour {
 				case("Batterie"):
 					Batterie.OnGuibool = true;
 					break;
+                 
+                    case("Held"):
+                        HeldController  .aktive = true;
+                        break;
 
 				default:
 					Batterie.OnGuibool = false;
@@ -51,6 +55,21 @@ public class CamaraController : MonoBehaviour {
 					}
 				}
 			}
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            RaycastHit hit;
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out hit, 80f))
+            {
+                switch (hit.collider.tag)
+                {
+                    default:
+                        HeldController.aktive = false;
+                        break;
+                }
+            }
+        }
 
 
 		if (Input.GetMouseButtonDown (0)) 

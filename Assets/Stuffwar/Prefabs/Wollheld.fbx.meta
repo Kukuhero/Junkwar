@@ -1,0 +1,1299 @@
+fileFormatVersion: 2
+guid: b8ccbf72805b0468d89756269ceaca30
+timeCreated: 1475925674
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Arm_IK_left
+    100002: Arm_IK_right
+    100004: Armature
+    100006: BezierCircle_003
+    100008: BezierCurve_001
+    100010: BezierCurve_002
+    100012: BezierCurve_003
+    100014: BezierCurve_005
+    100016: BezierCurve_006
+    100018: Bone
+    100020: Bone_001
+    100022: Chest
+    100024: Circle_001
+    100026: Circle_002
+    100028: Circle_003
+    100030: Circle_004
+    100032: Circle_005
+    100034: Circle_006
+    100036: Circle_007
+    100038: Circle_008
+    100040: Circle_009
+    100042: Circle_054
+    100044: Circle_113
+    100046: Circle_117
+    100048: Circle_120
+    100050: Circle_121
+    100052: Circle_123
+    100054: Circle_124
+    100056: Circle_126
+    100058: Circle_126_MeshPart0
+    100060: Circle_126_MeshPart1
+    100062: Circle_126_MeshPart2
+    100064: Circle_126_MeshPart3
+    100066: Circle_126_MeshPart4
+    100068: Circle_126_MeshPart5
+    100070: Circle_126_MeshPart6
+    100072: Circle_126_MeshPart7
+    100074: Circle_126_MeshPart8
+    100076: Circle_128
+    100078: Circle_132
+    100080: Circle_135
+    100082: Cylinder
+    100084: Ellbow_left
+    100086: Ellbow_right
+    100088: Foot_IK_left
+    100090: Foot_IK_right
+    100092: Foot_left
+    100094: Foot_right
+    100096: Hand_IK_left
+    100098: Hand_IK_right
+    100100: Hand_left
+    100102: Hand_left_001
+    100104: Hand_right
+    100106: Hand_right_001
+    100108: Knee_left
+    100110: Knee_right
+    100112: Lower_Arm_left
+    100114: Lower_Arm_right
+    100116: Lower_Finger_1_left
+    100118: Lower_Finger_1_right
+    100120: Lower_Finger_2_left
+    100122: Lower_Finger_2_right
+    100124: Lower_Finger_3_right
+    100126: Lower_Leg_left
+    100128: Lower_Leg_right
+    100130: Sphere_000
+    100132: Sphere_001
+    100134: Sphere_002
+    100136: Sphere_011
+    100138: Sphere_013
+    100140: Sphere_014
+    100142: Sphere_015
+    100144: Stomach
+    100146: Upper_Arm_left
+    100148: Upper_Arm_right
+    100150: Upper_Finger_1_left
+    100152: Upper_Finger_1_right
+    100154: Upper_Finger_2_left
+    100156: Upper_Finger_2_right
+    100158: Upper_Finger_3_right
+    100160: Upper_Leg_left
+    100162: Upper_Leg_right
+    100164: //RootNode
+    400000: Arm_IK_left
+    400002: Arm_IK_right
+    400004: Armature
+    400006: BezierCircle_003
+    400008: BezierCurve_001
+    400010: BezierCurve_002
+    400012: BezierCurve_003
+    400014: BezierCurve_005
+    400016: BezierCurve_006
+    400018: Bone
+    400020: Bone_001
+    400022: Chest
+    400024: Circle_001
+    400026: Circle_002
+    400028: Circle_003
+    400030: Circle_004
+    400032: Circle_005
+    400034: Circle_006
+    400036: Circle_007
+    400038: Circle_008
+    400040: Circle_009
+    400042: Circle_054
+    400044: Circle_113
+    400046: Circle_117
+    400048: Circle_120
+    400050: Circle_121
+    400052: Circle_123
+    400054: Circle_124
+    400056: Circle_126
+    400058: Circle_126_MeshPart0
+    400060: Circle_126_MeshPart1
+    400062: Circle_126_MeshPart2
+    400064: Circle_126_MeshPart3
+    400066: Circle_126_MeshPart4
+    400068: Circle_126_MeshPart5
+    400070: Circle_126_MeshPart6
+    400072: Circle_126_MeshPart7
+    400074: Circle_126_MeshPart8
+    400076: Circle_128
+    400078: Circle_132
+    400080: Circle_135
+    400082: Cylinder
+    400084: Ellbow_left
+    400086: Ellbow_right
+    400088: Foot_IK_left
+    400090: Foot_IK_right
+    400092: Foot_left
+    400094: Foot_right
+    400096: Hand_IK_left
+    400098: Hand_IK_right
+    400100: Hand_left
+    400102: Hand_left_001
+    400104: Hand_right
+    400106: Hand_right_001
+    400108: Knee_left
+    400110: Knee_right
+    400112: Lower_Arm_left
+    400114: Lower_Arm_right
+    400116: Lower_Finger_1_left
+    400118: Lower_Finger_1_right
+    400120: Lower_Finger_2_left
+    400122: Lower_Finger_2_right
+    400124: Lower_Finger_3_right
+    400126: Lower_Leg_left
+    400128: Lower_Leg_right
+    400130: Sphere_000
+    400132: Sphere_001
+    400134: Sphere_002
+    400136: Sphere_011
+    400138: Sphere_013
+    400140: Sphere_014
+    400142: Sphere_015
+    400144: Stomach
+    400146: Upper_Arm_left
+    400148: Upper_Arm_right
+    400150: Upper_Finger_1_left
+    400152: Upper_Finger_1_right
+    400154: Upper_Finger_2_left
+    400156: Upper_Finger_2_right
+    400158: Upper_Finger_3_right
+    400160: Upper_Leg_left
+    400162: Upper_Leg_right
+    400164: //RootNode
+    4300000: Circle_135
+    4300002: Circle_005
+    4300004: Sphere_000
+    4300006: Circle_001
+    4300008: Sphere_011
+    4300010: Circle_128
+    4300012: BezierCurve_006
+    4300014: Circle_002
+    4300016: Circle_004
+    4300018: Circle_003
+    4300020: Circle_126_MeshPart0
+    4300022: Circle_126_MeshPart1
+    4300024: Circle_126_MeshPart2
+    4300026: Circle_126_MeshPart3
+    4300028: Circle_126_MeshPart4
+    4300030: Circle_126_MeshPart5
+    4300032: Circle_126_MeshPart6
+    4300034: Circle_126_MeshPart7
+    4300036: Circle_126_MeshPart8
+    4300038: Cylinder
+    4300040: Sphere_002
+    4300042: Sphere_001
+    4300044: Circle_113
+    4300046: BezierCircle_003
+    4300048: Circle_132
+    4300050: Circle_054
+    4300052: Circle_006
+    4300054: Sphere_015
+    4300056: Circle_007
+    4300058: Circle_008
+    4300060: Circle_009
+    4300062: Sphere_014
+    4300064: Circle_120
+    4300066: BezierCurve_003
+    4300068: Circle_117
+    4300070: Circle_123
+    4300072: Sphere_013
+    4300074: Circle_121
+    4300076: BezierCurve_002
+    4300078: BezierCurve_005
+    4300080: Circle_124
+    4300082: BezierCurve_001
+    7400000: Start walk
+    7400002: ArmatureAction
+    7400004: komplette Animation
+    7400006: Start Walk
+    7400008: Walk
+    7400010: Attack
+    7400012: Idle
+    9500000: //RootNode
+    13700000: BezierCircle_003
+    13700002: BezierCurve_001
+    13700004: BezierCurve_002
+    13700006: BezierCurve_003
+    13700008: BezierCurve_005
+    13700010: BezierCurve_006
+    13700012: Circle_001
+    13700014: Circle_002
+    13700016: Circle_003
+    13700018: Circle_004
+    13700020: Circle_005
+    13700022: Circle_006
+    13700024: Circle_007
+    13700026: Circle_008
+    13700028: Circle_009
+    13700030: Circle_054
+    13700032: Circle_113
+    13700034: Circle_117
+    13700036: Circle_120
+    13700038: Circle_121
+    13700040: Circle_123
+    13700042: Circle_124
+    13700044: Circle_126_MeshPart0
+    13700046: Circle_126_MeshPart1
+    13700048: Circle_126_MeshPart2
+    13700050: Circle_126_MeshPart3
+    13700052: Circle_126_MeshPart4
+    13700054: Circle_126_MeshPart5
+    13700056: Circle_126_MeshPart6
+    13700058: Circle_126_MeshPart7
+    13700060: Circle_126_MeshPart8
+    13700062: Circle_128
+    13700064: Circle_132
+    13700066: Circle_135
+    13700068: Cylinder
+    13700070: Sphere_000
+    13700072: Sphere_001
+    13700074: Sphere_002
+    13700076: Sphere_011
+    13700078: Sphere_013
+    13700080: Sphere_014
+    13700082: Sphere_015
+  materials:
+    importMaterials: 1
+    materialName: 2
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: komplette Animation
+      takeName: ArmatureAction
+      firstFrame: 0
+      lastFrame: 640
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Arm_IK_left
+        weight: 1
+      - path: Armature/Arm_IK_left/Hand_IK_left
+        weight: 1
+      - path: Armature/Arm_IK_right
+        weight: 1
+      - path: Armature/Arm_IK_right/Hand_IK_right
+        weight: 1
+      - path: Armature/Chest
+        weight: 1
+      - path: Armature/Ellbow_left
+        weight: 1
+      - path: Armature/Ellbow_right
+        weight: 1
+      - path: Armature/Foot_IK_left
+        weight: 1
+      - path: Armature/Foot_IK_left/Foot_left
+        weight: 1
+      - path: Armature/Foot_IK_right
+        weight: 1
+      - path: Armature/Foot_IK_right/Foot_right
+        weight: 1
+      - path: Armature/Hand_left_001
+        weight: 1
+      - path: Armature/Hand_right_001
+        weight: 1
+      - path: Armature/Knee_left
+        weight: 1
+      - path: Armature/Knee_right
+        weight: 1
+      - path: Armature/Stomach
+        weight: 1
+      - path: Armature/Upper_Arm_left
+        weight: 1
+      - path: Armature/Upper_Arm_left/Lower_Arm_left
+        weight: 1
+      - path: Armature/Upper_Arm_left/Lower_Arm_left/Hand_left
+        weight: 1
+      - path: Armature/Upper_Arm_left/Lower_Arm_left/Hand_left/Bone
+        weight: 1
+      - path: Armature/Upper_Arm_left/Lower_Arm_left/Hand_left/Bone/Bone_001
+        weight: 1
+      - path: Armature/Upper_Arm_left/Lower_Arm_left/Hand_left/Upper_Finger_1_left
+        weight: 1
+      - path: Armature/Upper_Arm_left/Lower_Arm_left/Hand_left/Upper_Finger_1_left/Lower_Finger_1_left
+        weight: 1
+      - path: Armature/Upper_Arm_left/Lower_Arm_left/Hand_left/Upper_Finger_2_left
+        weight: 1
+      - path: Armature/Upper_Arm_left/Lower_Arm_left/Hand_left/Upper_Finger_2_left/Lower_Finger_2_left
+        weight: 1
+      - path: Armature/Upper_Arm_right
+        weight: 1
+      - path: Armature/Upper_Arm_right/Lower_Arm_right
+        weight: 1
+      - path: Armature/Upper_Arm_right/Lower_Arm_right/Hand_right
+        weight: 1
+      - path: Armature/Upper_Arm_right/Lower_Arm_right/Hand_right/Upper_Finger_1_right
+        weight: 1
+      - path: Armature/Upper_Arm_right/Lower_Arm_right/Hand_right/Upper_Finger_1_right/Lower_Finger_1_right
+        weight: 1
+      - path: Armature/Upper_Arm_right/Lower_Arm_right/Hand_right/Upper_Finger_2_right
+        weight: 1
+      - path: Armature/Upper_Arm_right/Lower_Arm_right/Hand_right/Upper_Finger_2_right/Lower_Finger_2_right
+        weight: 1
+      - path: Armature/Upper_Arm_right/Lower_Arm_right/Hand_right/Upper_Finger_3_right
+        weight: 1
+      - path: Armature/Upper_Arm_right/Lower_Arm_right/Hand_right/Upper_Finger_3_right/Lower_Finger_3_right
+        weight: 1
+      - path: Armature/Upper_Leg_left
+        weight: 1
+      - path: Armature/Upper_Leg_left/Lower_Leg_left
+        weight: 1
+      - path: Armature/Upper_Leg_right
+        weight: 1
+      - path: Armature/Upper_Leg_right/Lower_Leg_right
+        weight: 1
+      - path: BezierCircle_003
+        weight: 1
+      - path: BezierCurve_001
+        weight: 1
+      - path: BezierCurve_002
+        weight: 1
+      - path: BezierCurve_003
+        weight: 1
+      - path: BezierCurve_005
+        weight: 1
+      - path: BezierCurve_006
+        weight: 1
+      - path: Circle_001
+        weight: 1
+      - path: Circle_002
+        weight: 1
+      - path: Circle_003
+        weight: 1
+      - path: Circle_004
+        weight: 1
+      - path: Circle_005
+        weight: 1
+      - path: Circle_006
+        weight: 1
+      - path: Circle_007
+        weight: 1
+      - path: Circle_008
+        weight: 1
+      - path: Circle_009
+        weight: 1
+      - path: Circle_054
+        weight: 1
+      - path: Circle_113
+        weight: 1
+      - path: Circle_117
+        weight: 1
+      - path: Circle_120
+        weight: 1
+      - path: Circle_121
+        weight: 1
+      - path: Circle_123
+        weight: 1
+      - path: Circle_124
+        weight: 1
+      - path: Circle_126
+        weight: 1
+      - path: Circle_126/Circle_126_MeshPart0
+        weight: 1
+      - path: Circle_126/Circle_126_MeshPart1
+        weight: 1
+      - path: Circle_126/Circle_126_MeshPart2
+        weight: 1
+      - path: Circle_126/Circle_126_MeshPart3
+        weight: 1
+      - path: Circle_126/Circle_126_MeshPart4
+        weight: 1
+      - path: Circle_126/Circle_126_MeshPart5
+        weight: 1
+      - path: Circle_126/Circle_126_MeshPart6
+        weight: 1
+      - path: Circle_126/Circle_126_MeshPart7
+        weight: 1
+      - path: Circle_126/Circle_126_MeshPart8
+        weight: 1
+      - path: Circle_128
+        weight: 1
+      - path: Circle_132
+        weight: 1
+      - path: Circle_135
+        weight: 1
+      - path: Cylinder
+        weight: 1
+      - path: Sphere_000
+        weight: 1
+      - path: Sphere_001
+        weight: 1
+      - path: Sphere_002
+        weight: 1
+      - path: Sphere_011
+        weight: 1
+      - path: Sphere_013
+        weight: 1
+      - path: Sphere_014
+        weight: 1
+      - path: Sphere_015
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Start Walk
+      takeName: Default Take
+      firstFrame: 60
+      lastFrame: 120
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Arm_IK_left
+        weight: 1
+      - path: Armature/Arm_IK_left/Hand_IK_left
+        weight: 1
+      - path: Armature/Arm_IK_right
+        weight: 1
+      - path: Armature/Arm_IK_right/Hand_IK_right
+        weight: 1
+      - path: Armature/Chest
+        weight: 1
+      - path: Armature/Ellbow_left
+        weight: 1
+      - path: Armature/Ellbow_right
+        weight: 1
+      - path: Armature/Foot_IK_left
+        weight: 1
+      - path: Armature/Foot_IK_left/Foot_left
+        weight: 1
+      - path: Armature/Foot_IK_right
+        weight: 1
+      - path: Armature/Foot_IK_right/Foot_right
+        weight: 1
+      - path: Armature/Hand_left_001
+        weight: 1
+      - path: Armature/Hand_right_001
+        weight: 1
+      - path: Armature/Knee_left
+        weight: 1
+      - path: Armature/Knee_right
+        weight: 1
+      - path: Armature/Stomach
+        weight: 1
+      - path: Armature/Upper_Arm_left
+        weight: 1
+      - path: Armature/Upper_Arm_left/Lower_Arm_left
+        weight: 1
+      - path: Armature/Upper_Arm_left/Lower_Arm_left/Hand_left
+        weight: 1
+      - path: Armature/Upper_Arm_left/Lower_Arm_left/Hand_left/Bone
+        weight: 1
+      - path: Armature/Upper_Arm_left/Lower_Arm_left/Hand_left/Bone/Bone_001
+        weight: 1
+      - path: Armature/Upper_Arm_left/Lower_Arm_left/Hand_left/Upper_Finger_1_left
+        weight: 1
+      - path: Armature/Upper_Arm_left/Lower_Arm_left/Hand_left/Upper_Finger_1_left/Lower_Finger_1_left
+        weight: 1
+      - path: Armature/Upper_Arm_left/Lower_Arm_left/Hand_left/Upper_Finger_2_left
+        weight: 1
+      - path: Armature/Upper_Arm_left/Lower_Arm_left/Hand_left/Upper_Finger_2_left/Lower_Finger_2_left
+        weight: 1
+      - path: Armature/Upper_Arm_right
+        weight: 1
+      - path: Armature/Upper_Arm_right/Lower_Arm_right
+        weight: 1
+      - path: Armature/Upper_Arm_right/Lower_Arm_right/Hand_right
+        weight: 1
+      - path: Armature/Upper_Arm_right/Lower_Arm_right/Hand_right/Upper_Finger_1_right
+        weight: 1
+      - path: Armature/Upper_Arm_right/Lower_Arm_right/Hand_right/Upper_Finger_1_right/Lower_Finger_1_right
+        weight: 1
+      - path: Armature/Upper_Arm_right/Lower_Arm_right/Hand_right/Upper_Finger_2_right
+        weight: 1
+      - path: Armature/Upper_Arm_right/Lower_Arm_right/Hand_right/Upper_Finger_2_right/Lower_Finger_2_right
+        weight: 1
+      - path: Armature/Upper_Arm_right/Lower_Arm_right/Hand_right/Upper_Finger_3_right
+        weight: 1
+      - path: Armature/Upper_Arm_right/Lower_Arm_right/Hand_right/Upper_Finger_3_right/Lower_Finger_3_right
+        weight: 1
+      - path: Armature/Upper_Leg_left
+        weight: 1
+      - path: Armature/Upper_Leg_left/Lower_Leg_left
+        weight: 1
+      - path: Armature/Upper_Leg_right
+        weight: 1
+      - path: Armature/Upper_Leg_right/Lower_Leg_right
+        weight: 1
+      - path: BezierCircle_003
+        weight: 1
+      - path: BezierCurve_001
+        weight: 1
+      - path: BezierCurve_002
+        weight: 1
+      - path: BezierCurve_003
+        weight: 1
+      - path: BezierCurve_005
+        weight: 1
+      - path: BezierCurve_006
+        weight: 1
+      - path: Circle_001
+        weight: 1
+      - path: Circle_002
+        weight: 1
+      - path: Circle_003
+        weight: 1
+      - path: Circle_004
+        weight: 1
+      - path: Circle_005
+        weight: 1
+      - path: Circle_006
+        weight: 1
+      - path: Circle_007
+        weight: 1
+      - path: Circle_008
+        weight: 1
+      - path: Circle_009
+        weight: 1
+      - path: Circle_054
+        weight: 1
+      - path: Circle_113
+        weight: 1
+      - path: Circle_117
+        weight: 1
+      - path: Circle_120
+        weight: 1
+      - path: Circle_121
+        weight: 1
+      - path: Circle_123
+        weight: 1
+      - path: Circle_124
+        weight: 1
+      - path: Circle_126
+        weight: 1
+      - path: Circle_126/Circle_126_MeshPart0
+        weight: 1
+      - path: Circle_126/Circle_126_MeshPart1
+        weight: 1
+      - path: Circle_126/Circle_126_MeshPart2
+        weight: 1
+      - path: Circle_126/Circle_126_MeshPart3
+        weight: 1
+      - path: Circle_126/Circle_126_MeshPart4
+        weight: 1
+      - path: Circle_126/Circle_126_MeshPart5
+        weight: 1
+      - path: Circle_126/Circle_126_MeshPart6
+        weight: 1
+      - path: Circle_126/Circle_126_MeshPart7
+        weight: 1
+      - path: Circle_126/Circle_126_MeshPart8
+        weight: 1
+      - path: Circle_128
+        weight: 1
+      - path: Circle_132
+        weight: 1
+      - path: Circle_135
+        weight: 1
+      - path: Cylinder
+        weight: 1
+      - path: Sphere_000
+        weight: 1
+      - path: Sphere_001
+        weight: 1
+      - path: Sphere_002
+        weight: 1
+      - path: Sphere_011
+        weight: 1
+      - path: Sphere_013
+        weight: 1
+      - path: Sphere_014
+        weight: 1
+      - path: Sphere_015
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Walk
+      takeName: Default Take
+      firstFrame: 120
+      lastFrame: 240
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Arm_IK_left
+        weight: 1
+      - path: Armature/Arm_IK_left/Hand_IK_left
+        weight: 1
+      - path: Armature/Arm_IK_right
+        weight: 1
+      - path: Armature/Arm_IK_right/Hand_IK_right
+        weight: 1
+      - path: Armature/Chest
+        weight: 1
+      - path: Armature/Ellbow_left
+        weight: 1
+      - path: Armature/Ellbow_right
+        weight: 1
+      - path: Armature/Foot_IK_left
+        weight: 1
+      - path: Armature/Foot_IK_left/Foot_left
+        weight: 1
+      - path: Armature/Foot_IK_right
+        weight: 1
+      - path: Armature/Foot_IK_right/Foot_right
+        weight: 1
+      - path: Armature/Hand_left_001
+        weight: 1
+      - path: Armature/Hand_right_001
+        weight: 1
+      - path: Armature/Knee_left
+        weight: 1
+      - path: Armature/Knee_right
+        weight: 1
+      - path: Armature/Stomach
+        weight: 1
+      - path: Armature/Upper_Arm_left
+        weight: 1
+      - path: Armature/Upper_Arm_left/Lower_Arm_left
+        weight: 1
+      - path: Armature/Upper_Arm_left/Lower_Arm_left/Hand_left
+        weight: 1
+      - path: Armature/Upper_Arm_left/Lower_Arm_left/Hand_left/Bone
+        weight: 1
+      - path: Armature/Upper_Arm_left/Lower_Arm_left/Hand_left/Bone/Bone_001
+        weight: 1
+      - path: Armature/Upper_Arm_left/Lower_Arm_left/Hand_left/Upper_Finger_1_left
+        weight: 1
+      - path: Armature/Upper_Arm_left/Lower_Arm_left/Hand_left/Upper_Finger_1_left/Lower_Finger_1_left
+        weight: 1
+      - path: Armature/Upper_Arm_left/Lower_Arm_left/Hand_left/Upper_Finger_2_left
+        weight: 1
+      - path: Armature/Upper_Arm_left/Lower_Arm_left/Hand_left/Upper_Finger_2_left/Lower_Finger_2_left
+        weight: 1
+      - path: Armature/Upper_Arm_right
+        weight: 1
+      - path: Armature/Upper_Arm_right/Lower_Arm_right
+        weight: 1
+      - path: Armature/Upper_Arm_right/Lower_Arm_right/Hand_right
+        weight: 1
+      - path: Armature/Upper_Arm_right/Lower_Arm_right/Hand_right/Upper_Finger_1_right
+        weight: 1
+      - path: Armature/Upper_Arm_right/Lower_Arm_right/Hand_right/Upper_Finger_1_right/Lower_Finger_1_right
+        weight: 1
+      - path: Armature/Upper_Arm_right/Lower_Arm_right/Hand_right/Upper_Finger_2_right
+        weight: 1
+      - path: Armature/Upper_Arm_right/Lower_Arm_right/Hand_right/Upper_Finger_2_right/Lower_Finger_2_right
+        weight: 1
+      - path: Armature/Upper_Arm_right/Lower_Arm_right/Hand_right/Upper_Finger_3_right
+        weight: 1
+      - path: Armature/Upper_Arm_right/Lower_Arm_right/Hand_right/Upper_Finger_3_right/Lower_Finger_3_right
+        weight: 1
+      - path: Armature/Upper_Leg_left
+        weight: 1
+      - path: Armature/Upper_Leg_left/Lower_Leg_left
+        weight: 1
+      - path: Armature/Upper_Leg_right
+        weight: 1
+      - path: Armature/Upper_Leg_right/Lower_Leg_right
+        weight: 1
+      - path: BezierCircle_003
+        weight: 1
+      - path: BezierCurve_001
+        weight: 1
+      - path: BezierCurve_002
+        weight: 1
+      - path: BezierCurve_003
+        weight: 1
+      - path: BezierCurve_005
+        weight: 1
+      - path: BezierCurve_006
+        weight: 1
+      - path: Circle_001
+        weight: 1
+      - path: Circle_002
+        weight: 1
+      - path: Circle_003
+        weight: 1
+      - path: Circle_004
+        weight: 1
+      - path: Circle_005
+        weight: 1
+      - path: Circle_006
+        weight: 1
+      - path: Circle_007
+        weight: 1
+      - path: Circle_008
+        weight: 1
+      - path: Circle_009
+        weight: 1
+      - path: Circle_054
+        weight: 1
+      - path: Circle_113
+        weight: 1
+      - path: Circle_117
+        weight: 1
+      - path: Circle_120
+        weight: 1
+      - path: Circle_121
+        weight: 1
+      - path: Circle_123
+        weight: 1
+      - path: Circle_124
+        weight: 1
+      - path: Circle_126
+        weight: 1
+      - path: Circle_126/Circle_126_MeshPart0
+        weight: 1
+      - path: Circle_126/Circle_126_MeshPart1
+        weight: 1
+      - path: Circle_126/Circle_126_MeshPart2
+        weight: 1
+      - path: Circle_126/Circle_126_MeshPart3
+        weight: 1
+      - path: Circle_126/Circle_126_MeshPart4
+        weight: 1
+      - path: Circle_126/Circle_126_MeshPart5
+        weight: 1
+      - path: Circle_126/Circle_126_MeshPart6
+        weight: 1
+      - path: Circle_126/Circle_126_MeshPart7
+        weight: 1
+      - path: Circle_126/Circle_126_MeshPart8
+        weight: 1
+      - path: Circle_128
+        weight: 1
+      - path: Circle_132
+        weight: 1
+      - path: Circle_135
+        weight: 1
+      - path: Cylinder
+        weight: 1
+      - path: Sphere_000
+        weight: 1
+      - path: Sphere_001
+        weight: 1
+      - path: Sphere_002
+        weight: 1
+      - path: Sphere_011
+        weight: 1
+      - path: Sphere_013
+        weight: 1
+      - path: Sphere_014
+        weight: 1
+      - path: Sphere_015
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Attack
+      takeName: Default Take
+      firstFrame: 300
+      lastFrame: 450
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Arm_IK_left
+        weight: 1
+      - path: Armature/Arm_IK_left/Hand_IK_left
+        weight: 1
+      - path: Armature/Arm_IK_right
+        weight: 1
+      - path: Armature/Arm_IK_right/Hand_IK_right
+        weight: 1
+      - path: Armature/Chest
+        weight: 1
+      - path: Armature/Ellbow_left
+        weight: 1
+      - path: Armature/Ellbow_right
+        weight: 1
+      - path: Armature/Foot_IK_left
+        weight: 1
+      - path: Armature/Foot_IK_left/Foot_left
+        weight: 1
+      - path: Armature/Foot_IK_right
+        weight: 1
+      - path: Armature/Foot_IK_right/Foot_right
+        weight: 1
+      - path: Armature/Hand_left_001
+        weight: 1
+      - path: Armature/Hand_right_001
+        weight: 1
+      - path: Armature/Knee_left
+        weight: 1
+      - path: Armature/Knee_right
+        weight: 1
+      - path: Armature/Stomach
+        weight: 1
+      - path: Armature/Upper_Arm_left
+        weight: 1
+      - path: Armature/Upper_Arm_left/Lower_Arm_left
+        weight: 1
+      - path: Armature/Upper_Arm_left/Lower_Arm_left/Hand_left
+        weight: 1
+      - path: Armature/Upper_Arm_left/Lower_Arm_left/Hand_left/Bone
+        weight: 1
+      - path: Armature/Upper_Arm_left/Lower_Arm_left/Hand_left/Bone/Bone_001
+        weight: 1
+      - path: Armature/Upper_Arm_left/Lower_Arm_left/Hand_left/Upper_Finger_1_left
+        weight: 1
+      - path: Armature/Upper_Arm_left/Lower_Arm_left/Hand_left/Upper_Finger_1_left/Lower_Finger_1_left
+        weight: 1
+      - path: Armature/Upper_Arm_left/Lower_Arm_left/Hand_left/Upper_Finger_2_left
+        weight: 1
+      - path: Armature/Upper_Arm_left/Lower_Arm_left/Hand_left/Upper_Finger_2_left/Lower_Finger_2_left
+        weight: 1
+      - path: Armature/Upper_Arm_right
+        weight: 1
+      - path: Armature/Upper_Arm_right/Lower_Arm_right
+        weight: 1
+      - path: Armature/Upper_Arm_right/Lower_Arm_right/Hand_right
+        weight: 1
+      - path: Armature/Upper_Arm_right/Lower_Arm_right/Hand_right/Upper_Finger_1_right
+        weight: 1
+      - path: Armature/Upper_Arm_right/Lower_Arm_right/Hand_right/Upper_Finger_1_right/Lower_Finger_1_right
+        weight: 1
+      - path: Armature/Upper_Arm_right/Lower_Arm_right/Hand_right/Upper_Finger_2_right
+        weight: 1
+      - path: Armature/Upper_Arm_right/Lower_Arm_right/Hand_right/Upper_Finger_2_right/Lower_Finger_2_right
+        weight: 1
+      - path: Armature/Upper_Arm_right/Lower_Arm_right/Hand_right/Upper_Finger_3_right
+        weight: 1
+      - path: Armature/Upper_Arm_right/Lower_Arm_right/Hand_right/Upper_Finger_3_right/Lower_Finger_3_right
+        weight: 1
+      - path: Armature/Upper_Leg_left
+        weight: 1
+      - path: Armature/Upper_Leg_left/Lower_Leg_left
+        weight: 1
+      - path: Armature/Upper_Leg_right
+        weight: 1
+      - path: Armature/Upper_Leg_right/Lower_Leg_right
+        weight: 1
+      - path: BezierCircle_003
+        weight: 1
+      - path: BezierCurve_001
+        weight: 1
+      - path: BezierCurve_002
+        weight: 1
+      - path: BezierCurve_003
+        weight: 1
+      - path: BezierCurve_005
+        weight: 1
+      - path: BezierCurve_006
+        weight: 1
+      - path: Circle_001
+        weight: 1
+      - path: Circle_002
+        weight: 1
+      - path: Circle_003
+        weight: 1
+      - path: Circle_004
+        weight: 1
+      - path: Circle_005
+        weight: 1
+      - path: Circle_006
+        weight: 1
+      - path: Circle_007
+        weight: 1
+      - path: Circle_008
+        weight: 1
+      - path: Circle_009
+        weight: 1
+      - path: Circle_054
+        weight: 1
+      - path: Circle_113
+        weight: 1
+      - path: Circle_117
+        weight: 1
+      - path: Circle_120
+        weight: 1
+      - path: Circle_121
+        weight: 1
+      - path: Circle_123
+        weight: 1
+      - path: Circle_124
+        weight: 1
+      - path: Circle_126
+        weight: 1
+      - path: Circle_126/Circle_126_MeshPart0
+        weight: 1
+      - path: Circle_126/Circle_126_MeshPart1
+        weight: 1
+      - path: Circle_126/Circle_126_MeshPart2
+        weight: 1
+      - path: Circle_126/Circle_126_MeshPart3
+        weight: 1
+      - path: Circle_126/Circle_126_MeshPart4
+        weight: 1
+      - path: Circle_126/Circle_126_MeshPart5
+        weight: 1
+      - path: Circle_126/Circle_126_MeshPart6
+        weight: 1
+      - path: Circle_126/Circle_126_MeshPart7
+        weight: 1
+      - path: Circle_126/Circle_126_MeshPart8
+        weight: 1
+      - path: Circle_128
+        weight: 1
+      - path: Circle_132
+        weight: 1
+      - path: Circle_135
+        weight: 1
+      - path: Cylinder
+        weight: 1
+      - path: Sphere_000
+        weight: 1
+      - path: Sphere_001
+        weight: 1
+      - path: Sphere_002
+        weight: 1
+      - path: Sphere_011
+        weight: 1
+      - path: Sphere_013
+        weight: 1
+      - path: Sphere_014
+        weight: 1
+      - path: Sphere_015
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Idle
+      takeName: Default Take
+      firstFrame: 500
+      lastFrame: 640
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Arm_IK_left
+        weight: 1
+      - path: Armature/Arm_IK_left/Hand_IK_left
+        weight: 1
+      - path: Armature/Arm_IK_right
+        weight: 1
+      - path: Armature/Arm_IK_right/Hand_IK_right
+        weight: 1
+      - path: Armature/Chest
+        weight: 1
+      - path: Armature/Ellbow_left
+        weight: 1
+      - path: Armature/Ellbow_right
+        weight: 1
+      - path: Armature/Foot_IK_left
+        weight: 1
+      - path: Armature/Foot_IK_left/Foot_left
+        weight: 1
+      - path: Armature/Foot_IK_right
+        weight: 1
+      - path: Armature/Foot_IK_right/Foot_right
+        weight: 1
+      - path: Armature/Hand_left_001
+        weight: 1
+      - path: Armature/Hand_right_001
+        weight: 1
+      - path: Armature/Knee_left
+        weight: 1
+      - path: Armature/Knee_right
+        weight: 1
+      - path: Armature/Stomach
+        weight: 1
+      - path: Armature/Upper_Arm_left
+        weight: 1
+      - path: Armature/Upper_Arm_left/Lower_Arm_left
+        weight: 1
+      - path: Armature/Upper_Arm_left/Lower_Arm_left/Hand_left
+        weight: 1
+      - path: Armature/Upper_Arm_left/Lower_Arm_left/Hand_left/Bone
+        weight: 1
+      - path: Armature/Upper_Arm_left/Lower_Arm_left/Hand_left/Bone/Bone_001
+        weight: 1
+      - path: Armature/Upper_Arm_left/Lower_Arm_left/Hand_left/Upper_Finger_1_left
+        weight: 1
+      - path: Armature/Upper_Arm_left/Lower_Arm_left/Hand_left/Upper_Finger_1_left/Lower_Finger_1_left
+        weight: 1
+      - path: Armature/Upper_Arm_left/Lower_Arm_left/Hand_left/Upper_Finger_2_left
+        weight: 1
+      - path: Armature/Upper_Arm_left/Lower_Arm_left/Hand_left/Upper_Finger_2_left/Lower_Finger_2_left
+        weight: 1
+      - path: Armature/Upper_Arm_right
+        weight: 1
+      - path: Armature/Upper_Arm_right/Lower_Arm_right
+        weight: 1
+      - path: Armature/Upper_Arm_right/Lower_Arm_right/Hand_right
+        weight: 1
+      - path: Armature/Upper_Arm_right/Lower_Arm_right/Hand_right/Upper_Finger_1_right
+        weight: 1
+      - path: Armature/Upper_Arm_right/Lower_Arm_right/Hand_right/Upper_Finger_1_right/Lower_Finger_1_right
+        weight: 1
+      - path: Armature/Upper_Arm_right/Lower_Arm_right/Hand_right/Upper_Finger_2_right
+        weight: 1
+      - path: Armature/Upper_Arm_right/Lower_Arm_right/Hand_right/Upper_Finger_2_right/Lower_Finger_2_right
+        weight: 1
+      - path: Armature/Upper_Arm_right/Lower_Arm_right/Hand_right/Upper_Finger_3_right
+        weight: 1
+      - path: Armature/Upper_Arm_right/Lower_Arm_right/Hand_right/Upper_Finger_3_right/Lower_Finger_3_right
+        weight: 1
+      - path: Armature/Upper_Leg_left
+        weight: 1
+      - path: Armature/Upper_Leg_left/Lower_Leg_left
+        weight: 1
+      - path: Armature/Upper_Leg_right
+        weight: 1
+      - path: Armature/Upper_Leg_right/Lower_Leg_right
+        weight: 1
+      - path: BezierCircle_003
+        weight: 1
+      - path: BezierCurve_001
+        weight: 1
+      - path: BezierCurve_002
+        weight: 1
+      - path: BezierCurve_003
+        weight: 1
+      - path: BezierCurve_005
+        weight: 1
+      - path: BezierCurve_006
+        weight: 1
+      - path: Circle_001
+        weight: 1
+      - path: Circle_002
+        weight: 1
+      - path: Circle_003
+        weight: 1
+      - path: Circle_004
+        weight: 1
+      - path: Circle_005
+        weight: 1
+      - path: Circle_006
+        weight: 1
+      - path: Circle_007
+        weight: 1
+      - path: Circle_008
+        weight: 1
+      - path: Circle_009
+        weight: 1
+      - path: Circle_054
+        weight: 1
+      - path: Circle_113
+        weight: 1
+      - path: Circle_117
+        weight: 1
+      - path: Circle_120
+        weight: 1
+      - path: Circle_121
+        weight: 1
+      - path: Circle_123
+        weight: 1
+      - path: Circle_124
+        weight: 1
+      - path: Circle_126
+        weight: 1
+      - path: Circle_126/Circle_126_MeshPart0
+        weight: 1
+      - path: Circle_126/Circle_126_MeshPart1
+        weight: 1
+      - path: Circle_126/Circle_126_MeshPart2
+        weight: 1
+      - path: Circle_126/Circle_126_MeshPart3
+        weight: 1
+      - path: Circle_126/Circle_126_MeshPart4
+        weight: 1
+      - path: Circle_126/Circle_126_MeshPart5
+        weight: 1
+      - path: Circle_126/Circle_126_MeshPart6
+        weight: 1
+      - path: Circle_126/Circle_126_MeshPart7
+        weight: 1
+      - path: Circle_126/Circle_126_MeshPart8
+        weight: 1
+      - path: Circle_128
+        weight: 1
+      - path: Circle_132
+        weight: 1
+      - path: Circle_135
+        weight: 1
+      - path: Cylinder
+        weight: 1
+      - path: Sphere_000
+        weight: 1
+      - path: Sphere_001
+        weight: 1
+      - path: Sphere_002
+        weight: 1
+      - path: Sphere_011
+        weight: 1
+      - path: Sphere_013
+        weight: 1
+      - path: Sphere_014
+        weight: 1
+      - path: Sphere_015
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 150
+    meshCompression: 0
+    addColliders: 1
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -124,7 +124,7 @@ public class KIDefController : MonoBehaviour
 		while (true) {
 			if (damage) 
 			{
-				(int)newtarget.GetComponent<EnemyController> ().health -= Schaden;
+				(int)newtarget.GetComponent<Health> ().health -= Schaden;
 			}
 				yield return new WaitForSeconds (3);
 
