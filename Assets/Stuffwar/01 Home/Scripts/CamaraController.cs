@@ -23,7 +23,6 @@ public class CamaraController : MonoBehaviour {
 			Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 			if (Physics.Raycast (ray, out hit, 80f)) 
 			{
-				print (hit.collider.gameObject);
 				switch(hit.collider.tag) 
 				{
 				case("Strom"):
@@ -46,7 +45,7 @@ public class CamaraController : MonoBehaviour {
 					break;
                  
                     case("Held"):
-                        HeldController  .aktive = true;
+                        StartCoroutine(aktive());
                         break;
 
 				default:
@@ -148,4 +147,10 @@ public class CamaraController : MonoBehaviour {
 		}
 		mousePosition = Input.mousePosition;
 	}
+    IEnumerator aktive()
+    {
+        yield return new WaitForSeconds(1);
+        HeldController.aktive = true;
+        StopCoroutine(aktive());
+    }
 }

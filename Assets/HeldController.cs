@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class HeldController : MonoBehaviour {
-    private float speed = 3f;
+    public float speed = 3f;
     private Vector3 nRichtungsvector;
     public static bool aktive;
     private Animator anim;
@@ -44,58 +44,97 @@ public class HeldController : MonoBehaviour {
     }
     void Heldensteuerung()
     {
-        if (Input.GetAxis("Vertical") != 0 || Input.GetAxis("Horizontal") != 0)
+        if (Input.GetAxis("Horizontal") != 0)
         {
-            print("InWalkAnim");
-            anim.SetBool("Walk", true);
+            anim.SetBool("sideWalk", true);
         }
         else
         {
-            print("elseWalkAnim");
+            anim.SetBool("sideWalk", false);
+        }
+
+
+        if (Input.GetAxis("Vertical") != 0)
+        {
+           
+            anim.SetBool("Walk", true);
+        } else
+        {
             anim.SetBool("Walk", false);
         }
+
+
+        if (Input.GetAxis("Vertical") != 0)
+        {
+            anim.SetBool("Walk", true);
+        }else
+        {
+            anim.SetBool("Walk", false);
+        }
+
 
         if (Input.GetMouseButtonDown(0))
         {
             attack = true;
-            anim.SetBool("Attack", true);
-            anim.SetBool("Walk", false);
+
             StartCoroutine(Attack());
-            aktive = false;
-           
         }
-        //else
-        {
-            //anim.SetBool("Attack", false);
-        }
+
+
+
         RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
         int layerMask = 1 << 8;
         Debug.DrawRay(ray.origin,ray.direction * 100, Color.black, 2f, true);
-        if (Physics.Raycast(ray, out hit, 3000f,layerMask))
+        if (Physics.Raycast(ray, out hit, 3000f, layerMask))
         {
-            gameObject.transform.LookAt(new Vector3(hit.point.x,transform.position.y, hit.point.z));
-            /*gameObject.transform.rotation = Quaternion.RotateTowards(gameObject.transform.rotation, 
-                                            Quaternion.LookRotation(new Vector3(hit.point.x, 0f, hit.point.z)),200f* Time.deltaTime);*/
+            //if (Vectorlaenge(Vectorberechnung(transform.position, hit.point)) > 2f && Input.GetAxis("Mouse X") != 0 ||Input.GetAxis("Mouse Y") != 0 )
+            if (Vectorlaenge(Vectorberechnung(transform.position, hit.point)) > 2f)
+            {
 
-            nRichtungsvector = Vectornormieren(Vectorberechnung(gameObject.transform.position, hit.point));
-            Normalenberechnung(nRichtungsvector);
-            Debug.DrawLine(gameObject.transform.position, hit.point);
-            Debug.DrawRay(transform.position, Normalenberechnung(nRichtungsvector)*30f,Color.red);
-        }
+                nRichtungsvector = Vectornormieren(Vectorberechnung(gameObject.transform.position, hit.point));
+                Normalenberechnung(nRichtungsvector);
+                Debug.DrawLine(gameObject.transform.position, hit.point);
+                Debug.DrawRay(transform.position, Normalenberechnung(nRichtungsvector) * 30f, Color.red);
 
+                //gameObject.transform.LookAt(new Vector3(hit.point.x, transform.position.y, hit.point.z));
+                gameObject.transform.rotation = Quaternion.RotateTowards(gameObject.transform.rotation, 
+                    Quaternion.LookRotation( nRichtungsvector),200f* Time.deltaTime);
 
-        gameObject.transform.position += 
-            new Vector3((Input.GetAxis("Vertical") * nRichtungsvector.x) + (Input.GetAxis("Horizontal")* Normalenberechnung(nRichtungsvector).x), 0,
-                (Input.GetAxis("Vertical") * nRichtungsvector.z) + (Input.GetAxis("Horizontal")* Normalenberechnung(nRichtungsvector).z))*speed * Time.deltaTime;
-        
+            
+
+                gameObject.transform.position += 
+            new Vector3((Input.GetAxis("Vertical") * nRichtungsvector.x) + (Input.GetAxis("Horizontal") * Normalenberechnung(nRichtungsvector).x), 0,
+                    (Input.GetAxis("Vertical") * nRichtungsvector.z) + (Input.GetAxis("Horizontal") * Normalenberechnung(nRichtungsvector).z)) * speed * Time.deltaTime;
+            }
+            else
+            {
+                anim.SetBool("sideWalk", false);
+                anim.SetBool("Walk", false);
+
+            }
+        } 
     }
+
+    void OnCollisionEnter(Collision other)
+    {
+        print(other.gameObject); 
+    }
+
     IEnumerator Attack()
     {
-
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(0.5f);
+        aktive = false;
+        anim.SetBool("Attack", true);
+        anim.SetBool("Walk", false);
+        yield return new WaitForSeconds(1);
         anim.SetBool("Attack", false);
         aktive = true;
+        attack = false;
 
+    }
+    float Vectorlaenge(Vector3 vector)
+    {
+        return Mathf.Sqrt (vector.x * vector.x + vector.y * vector.y + vector.z * vector.z);
     }
 }

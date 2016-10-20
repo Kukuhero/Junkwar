@@ -1,20 +1,20 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Stuffwar/01 Home/Scripts/EnemySpawn.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/HeldController.cs">
     <Files>
+      <File FileName="Assets/Feinderkennung.cs" Line="115" Column="6" />
       <File FileName="Assets/Stuffwar/01 Home/Scripts/Userinterface.cs" Line="1" Column="1" />
-      <File FileName="Assets/Stuffwar/01 Home/Scripts/Wegfindung.cs" Line="144" Column="81" />
-      <File FileName="Assets/Stuffwar/01 Home/Scripts/EnemyController.cs" Line="135" Column="10" />
-      <File FileName="Assets/Stuffwar/01 Home/Scripts/EnemySpawn.cs" Line="22" Column="24" />
-      <File FileName="Assets/Stuffwar/01 Home/Scripts/StromRotater.cs" Line="1" Column="1" />
-      <File FileName="Assets/Stuffwar/01 Home/Scripts/Stromspawn.cs" Line="1" Column="1" />
-      <File FileName="Assets/Stuffwar/01 Home/Scripts/CamaraController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Stuffwar/01 Home/Scripts/Wegfindung.cs" Line="1" Column="1" />
+      <File FileName="Assets/Stuffwar/01 Home/Scripts/EnemyController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Stuffwar/01 Home/Scripts/EnemySpawn.cs" Line="1" Column="1" />
       <File FileName="Assets/Stuffwar/01 Home/Scripts/Bambusprojektil.cs" Line="1" Column="1" />
       <File FileName="Assets/Stuffwar/01 Home/Scripts/Tomate.cs" Line="1" Column="1" />
       <File FileName="Assets/Stuffwar/01 Home/Scripts/Narzisse.cs" Line="1" Column="1" />
-      <File FileName="Assets/Stuffwar/01 Home/Scripts/HouseController.cs" Line="1" Column="1" />
-      <File FileName="Assets/Stuffwar/01 Home/Scripts/Batterie.cs" Line="1" Column="1" />
-      <File FileName="Assets/Stuffwar/01 Home/Scripts/Nektarkugel.cs" Line="29" Column="71" />
+      <File FileName="Assets/HeldController.cs" Line="57" Column="40" />
+      <File FileName="Assets/Health.cs" Line="42" Column="67" />
+      <File FileName="Assets/Stuffwar/01 Home/Scripts/Nektarkugel.cs" Line="1" Column="1" />
+      <File FileName="Assets/Stuffwar/01 Home/Scripts/Tomatenprojektil.cs" Line="1" Column="1" />
+      <File FileName="Assets/Stuffwar/01 Home/Scripts/KIDefController.cs" Line="20" Column="25" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

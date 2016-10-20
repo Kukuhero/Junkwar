@@ -18,8 +18,6 @@ public class KIDefController : MonoBehaviour
 	private int Position = 30;
 	public Texture2D healthTexture;
 	CharacterController cc;
-	AIPath aip;
-	Seeker s;
 	Transform targettransform;
 	private GameObject newtarget;
 
@@ -32,9 +30,6 @@ public class KIDefController : MonoBehaviour
 		targeti = Random.Range (0, targetlength);
 		targettransform = target [targeti].GetComponentInParent<Transform>();
 		cc = gameObject.GetComponentInParent<CharacterController>();
-		aip = gameObject.GetComponentInParent<AIPath>();
-		s = GetComponentInParent <Seeker> ();
-		gameObject.GetComponentInParent<AIPath> ().target = targettransform;
 		StartCoroutine (Damage ());
 	}
 	
@@ -53,7 +48,6 @@ public class KIDefController : MonoBehaviour
 			if (targetlength > 0) {
 				targeti = Random.Range (0, targetlength);
 				targettransform = target [targeti].GetComponentInParent<Transform>();
-				gameObject.GetComponentInParent<AIPath> ().target = targettransform;
 				attack = true;
 				damage = false;
 			} else {
@@ -63,12 +57,9 @@ public class KIDefController : MonoBehaviour
 		}
 		if (attack == true) {
 			cc.enabled = true;
-			aip.enabled = true;
-			s.enabled = true;
+			
 		} else {
 			cc.enabled = false;
-			aip.enabled = false;
-			s.enabled = false;
 
 		}
 	}

@@ -14,7 +14,6 @@ public class EnemyController : MonoBehaviour {
 	void Awake () 
 	{
 		gameObject.transform.parent.GetComponent<Wegfindung>().target = House.transform;
-		print(gameObject.transform.parent.GetComponent<Wegfindung>().target);
 		StartCoroutine (makeDamage ());
 		Initiatedspeed = gameObject.transform.parent.GetComponent<Wegfindung> ().speed;
 	}

@@ -4,10 +4,11 @@ using System.Collections;
 public class Feinderkennung : MonoBehaviour {
 
     private bool attack;
-    public static GameObject[] target = new GameObject[10];
+    public static GameObject[] target = new GameObject[50];
     public static int x = 0;
     public int Damage;
     public float splash;
+    private bool inattack = false;
 
 
     // Use this for initialization
@@ -17,22 +18,27 @@ public class Feinderkennung : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
+        //print(x);
         attack = gameObject.GetComponent<HeldController>().attack;
         if (attack) 
         {
-            while (target [0] == null && attack) 
+            while (target [0] == null && x > 0) 
             {
+                //print("inwhileArrayoverwrite");
                 Arrayoverwrite (0);
                 if (x <= 0) 
                 {
+                    //print("attack = false");
                     attack = false;
                 }
             }
 
         }
-        if (attack) 
+        if (attack && !inattack) 
         {
-            makeDamage(); 
+            //print("anzahl Coroutinestart");
+            inattack = true;
+            StartCoroutine(makeDamage());
         }
         else 
         {
@@ -43,12 +49,37 @@ public class Feinderkennung : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        switch (other.tag) {
+       GameObject other2 = null;
+       int anzahl = 0;
+       switch (other.tag) {
             case "Enemy":
-                gameObject.GetComponent<HeldController>().attack = true;
+                //print(other.gameObject);
+                ////print(other.gameObject.name.Clone().ToString() != "Enemy");
+                if (other.gameObject.name.Clone().ToString() != "Enemy")
+                {
+                    other2 = other.gameObject.transform.parent.gameObject;
+                    //print(other2.gameObject.name.Clone().ToString() == "Enemy");
+          
+                    if (x <= 0)
+                    {
+                        //print("noch keiner gespeichert");
+                        target[0] = other2.gameObject;
+                        x = 1;
+                    }
+                }
 
-                target [x] = other.gameObject;
-                x++;
+                for (int i = 0; i < target.Length && other2.gameObject != target[i]; i++)
+                {
+                    ////print("other2.gamObject:" + other2.gameObject);
+                    ////print("target[i]:" + target[i]);
+                    if (i+1 == target.Length)
+                            {
+                                //print("gamobject ist neu");
+                                target[x] = other2.gameObject;
+                                x++; 
+                            }
+
+                }
 
 
                 break;
@@ -60,34 +91,43 @@ public class Feinderkennung : MonoBehaviour {
         switch (other.tag) 
         {
             case "Enemy":
+                print(other.gameObject);
                 int a = 0;
-                while(a<=target.Length-1)
-
+                while (a <= target.Length - 1)
                 {
-                    if (other.gameObject == target[a]) 
+                    //print("whileirgendwas");
+                    if (other.gameObject == target[a])
                     {
-                        Arrayoverwrite (a);
+                        print("gekillt"+other.gameObject);
+                        Arrayoverwrite(a);
 
                     }
                     a++;
 
                 }
 
+
                 break;
         }
     }
-    void makeDamage()
+    IEnumerator makeDamage()
     {
-        print("makeDamage IEnumerator");
-       new WaitForSeconds(2f);
+        
+        //print("makeDamage IEnumerator");
+        yield return new WaitForSeconds(0.9f);
+        //print("vor formakeDamage" + x);
         for (int i = 0; i < x; i++)
         {
-            print("informakeDamage");
+            //print(target[i].gameObject);
+            //print("informakeDamage");
             Vector3 Centerbox = new Vector3 (gameObject.GetComponent<BoxCollider>().center.x,0f,gameObject.GetComponent<BoxCollider>().center.z);
             float Abstand = Vectorlaenge(Vectorberechnung(target[i].transform.position, Centerbox))+0.1f;
             target[i].GetComponent<Health>().health -= Mathf.FloorToInt(Damage*splash/Abstand);
-            print(Mathf.FloorToInt(Damage*splash/Abstand));
+            //print(Mathf.FloorToInt(Damage*splash/Abstand));
         }
+        yield return new WaitForSeconds(1);
+        inattack = false;
+        StopCoroutine(makeDamage());
     }
     
         
@@ -95,12 +135,13 @@ public class Feinderkennung : MonoBehaviour {
     void Arrayoverwrite (int i)
 {
         x--;
+        //print(x);
         while (i < target.Length-1) 
         {
             target [i] = target [i + 1];
             i++;
         }
-    }
+        target[i] = null;    }
 
     Vector3 Vectorberechnung(Vector3 Start , Vector3 Ziel)
     {

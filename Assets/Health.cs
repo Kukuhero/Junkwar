@@ -18,7 +18,7 @@ public class Health : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
     {
-        print(health);
+        //print(health);
         if (health <= 0) 
         {
             health = 0;
@@ -37,7 +37,7 @@ public class Health : MonoBehaviour {
 
     void OnGUI()
     {
-        if (health != maxhealth) 
+        if (health != maxhealth && health >= 0) 
         {
             screenPos = Camera.main.WorldToScreenPoint (gameObject.transform.position);
             GUI.DrawTexture (new Rect (screenPos.x - 40, Screen.height - screenPos.y - Position, health / 2, 5), healthTexture);
