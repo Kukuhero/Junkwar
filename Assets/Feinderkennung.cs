@@ -18,7 +18,7 @@ public class Feinderkennung : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        //print(x);
+        print(x);
         attack = gameObject.GetComponent<HeldController>().attack;
         if (attack) 
         {
@@ -53,9 +53,8 @@ public class Feinderkennung : MonoBehaviour {
        int anzahl = 0;
        switch (other.tag) {
             case "Enemy":
-                //print(other.gameObject);
-                ////print(other.gameObject.name.Clone().ToString() != "Enemy");
-                if (other.gameObject.name.Clone().ToString() != "Enemy")
+                print(other.gameObject.name.Clone().ToString());
+                if (other.gameObject.name.Clone().ToString() != "Enemy(Clone)" && !other.isTrigger)
                 {
                     other2 = other.gameObject.transform.parent.gameObject;
                     //print(other2.gameObject.name.Clone().ToString() == "Enemy");
@@ -66,22 +65,21 @@ public class Feinderkennung : MonoBehaviour {
                         target[0] = other2.gameObject;
                         x = 1;
                     }
+                
+
+                    for (int i = 0; i < target.Length && other2.gameObject != target[i]; i++)
+                    {
+                        ////print("other2.gamObject:" + other2.gameObject);
+                        ////print("target[i]:" + target[i]);
+                        if (i + 1 == target.Length)
+                        {
+                            print("gamobject ist neu" + other2.gameObject);
+                            target[x] = other2.gameObject;
+                            x++; 
+                        }
+
+                    }
                 }
-
-                for (int i = 0; i < target.Length && other2.gameObject != target[i]; i++)
-                {
-                    ////print("other2.gamObject:" + other2.gameObject);
-                    ////print("target[i]:" + target[i]);
-                    if (i+1 == target.Length)
-                            {
-                                //print("gamobject ist neu");
-                                target[x] = other2.gameObject;
-                                x++; 
-                            }
-
-                }
-
-
                 break;
         }
     }
@@ -135,7 +133,7 @@ public class Feinderkennung : MonoBehaviour {
     void Arrayoverwrite (int i)
 {
         x--;
-        //print(x);
+        print("Arrayoverwrite" + x);
         while (i < target.Length-1) 
         {
             target [i] = target [i + 1];

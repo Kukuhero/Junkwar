@@ -118,7 +118,14 @@ public class HeldController : MonoBehaviour {
 
     void OnCollisionEnter(Collision other)
     {
-        print(other.gameObject); 
+        switch(other.gameObject.tag)
+        {
+            case "Zahnrad":
+                Destroy (other.transform.gameObject);
+                HouseController.Zahnräder += 1;
+                break;
+
+        }
     }
 
     IEnumerator Attack()
