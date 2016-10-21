@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GameObjectCollection>
+	<GameObjects>
+		<Gameobject name = "Nagelheld">
+		 <damage>50</damage>
+		 <health>100</health>
+		</Gameobject>
+		<Gameobject name = "Wollheld">
+		 <damage>100</damage>
+		 <health>1000</health>
+		</Gameobject>
+	</GameObjects>
+</GameObjectCollection>

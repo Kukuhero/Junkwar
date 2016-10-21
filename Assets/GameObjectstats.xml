@@ -1,7 +1,0 @@
-<GameObjectCollection>
-    <GameObjects>
-        <GameObject name="a">
-        <Health>5</Health>
-        </GameObject>
-    </GameObjects>
-</GameObjectCollection>

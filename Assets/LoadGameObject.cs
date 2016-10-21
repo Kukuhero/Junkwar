@@ -7,19 +7,15 @@ using System.IO;
 
 public class LoadGameObject : MonoBehaviour {
 
+	public const string path = "GameObjectstats";
 	// Use this for initialization
 	void Start () {
 
-
-
-        var GameObjectCollection = GameObjectInitalisierer.Load(Path.Combine(Application.dataPath, "GameObjectstats.xml"));
-
-        var xmlData = @"<GameObjectCollection><GameObjects><GameObject name= ""a""><Health>5</Health></GameObject></GameObjects></GameObjectCollection>";
-        GameObjectCollection = GameObjectInitalisierer.LoadFromText(xmlData);
-        print(GameObjectCollection);
-
-        GameObjectCollection.Save(Path.Combine(Application.persistentDataPath, "GameObjectstats.xml"));
-
+		GameObjectContainer go = GameObjectContainer.Load (path);
+		print (go.Gameobjects.Count);
+		foreach (Gameobject Gameobject in go.Gameobjects) {
+			print (Gameobject.Name);
+		}
 
 	}
 	

@@ -3,8 +3,10 @@ using System.Xml.Serialization;
 
 public class Gameobject  {
 
-    [XmlAttribute("name")]
+	[XmlAttribute("name")]
     public string Name;
-
+	[XmlElement("damage")]
+	public int damage;
+	[XmlElement("health")]
     public int Health;
 }
