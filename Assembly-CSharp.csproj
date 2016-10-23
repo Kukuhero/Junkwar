@@ -46,9 +46,10 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Feinderkennung.cs" />
-     <Compile Include="Assets\GameObjectInitalisierer.cs" />
+     <Compile Include="Assets\GameObjectContainer.cs" />
      <Compile Include="Assets\Gameobject.cs" />
      <Compile Include="Assets\Health.cs" />
+     <Compile Include="Assets\HeldCameraController.cs" />
      <Compile Include="Assets\HeldController.cs" />
      <Compile Include="Assets\LoadGameObject.cs" />
      <Compile Include="Assets\Stuffwar\01 Home\Scripts\Bambus.cs" />
@@ -69,7 +70,7 @@
      <Compile Include="Assets\Stuffwar\01 Home\Scripts\Userinterface.cs" />
      <Compile Include="Assets\Stuffwar\01 Home\Scripts\Wegfindung.cs" />
      <Compile Include="Assets\Stuffwar\01 Home\Scripts\ZahnradRotater.cs" />
-     <None Include="Assets\GameObjectstats.xml" />
+     <None Include="Assets\Resources\GameObjectstats.xml" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

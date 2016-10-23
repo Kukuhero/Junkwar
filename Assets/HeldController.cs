@@ -81,7 +81,6 @@ public class HeldController : MonoBehaviour {
         }
 
 
-
         RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
         int layerMask = 1 << 8;
@@ -99,7 +98,7 @@ public class HeldController : MonoBehaviour {
 
                 //gameObject.transform.LookAt(new Vector3(hit.point.x, transform.position.y, hit.point.z));
                 gameObject.transform.rotation = Quaternion.RotateTowards(gameObject.transform.rotation, 
-                    Quaternion.LookRotation( nRichtungsvector),200f* Time.deltaTime);
+                    Quaternion.LookRotation(nRichtungsvector),200f* Time.deltaTime);
 
             
 
