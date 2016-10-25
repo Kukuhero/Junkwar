@@ -1,11 +1,13 @@
 -debug
 -target:library
 -nowarn:0169
--out:Temp/Assembly-CSharp.dll
--r:D:/Editor/Editor/Data/Managed/UnityEngine.dll
--r:D:/Editor/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll
--r:D:/Editor/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll
--r:D:/Editor/Editor/Data/Managed/UnityEditor.dll
+-out:'Temp/Assembly-CSharp.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Managed/UnityEngine.dll'
+-r:'/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll'
+-r:'/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Managed/UnityEditor.dll'
+-r:'/Applications/Unity/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll'
+-r:'/Applications/Unity/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Common.dll'
 -define:UNITY_5_3_OR_NEWER
 -define:UNITY_5_4_OR_NEWER
 -define:UNITY_5_4_0
@@ -61,16 +63,16 @@
 -define:ENABLE_LOCALIZATION
 -define:ENABLE_ANDROID_ATLAS_ETC1_COMPRESSION
 -define:ENABLE_EDITOR_TESTS_RUNNER
--define:UNITY_STANDALONE_WIN
+-define:UNITY_STANDALONE_OSX
 -define:UNITY_STANDALONE
 -define:ENABLE_SUBSTANCE
+-define:ENABLE_GAMECENTER
 -define:ENABLE_TEXTUREID_MAP
 -define:ENABLE_RUNTIME_GI
 -define:ENABLE_MOVIES
 -define:ENABLE_NETWORK
 -define:ENABLE_CRUNCH_TEXTURE_COMPRESSION
 -define:ENABLE_UNITYWEBREQUEST
--define:ENABLE_EVENT_QUEUE
 -define:ENABLE_CLUSTERINPUT
 -define:ENABLE_WEBSOCKET_HOST
 -define:ENABLE_MONO
@@ -80,31 +82,31 @@
 -define:UNITY_ASSERTIONS
 -define:UNITY_EDITOR
 -define:UNITY_EDITOR_64
--define:UNITY_EDITOR_WIN
--define:UNITY_TEAM_LICENSE
-Assets/Feinderkennung.cs
-Assets/GameObjectContainer.cs
-Assets/Gameobject.cs
-Assets/Health.cs
-Assets/HeldController.cs
-Assets/LoadGameObject.cs
-"Assets/Stuffwar/01 Home/Scripts/Bambus.cs"
-"Assets/Stuffwar/01 Home/Scripts/Bambusprojektil.cs"
-"Assets/Stuffwar/01 Home/Scripts/Batterie.cs"
-"Assets/Stuffwar/01 Home/Scripts/CamaraController.cs"
-"Assets/Stuffwar/01 Home/Scripts/EnemyController.cs"
-"Assets/Stuffwar/01 Home/Scripts/EnemySpawn.cs"
-"Assets/Stuffwar/01 Home/Scripts/HouseController.cs"
-"Assets/Stuffwar/01 Home/Scripts/KIDefController.cs"
-"Assets/Stuffwar/01 Home/Scripts/KuehlschrankSpawn.cs"
-"Assets/Stuffwar/01 Home/Scripts/Narzisse.cs"
-"Assets/Stuffwar/01 Home/Scripts/Nektarkugel.cs"
-"Assets/Stuffwar/01 Home/Scripts/StromRotater.cs"
-"Assets/Stuffwar/01 Home/Scripts/Stromspawn.cs"
-"Assets/Stuffwar/01 Home/Scripts/Tomate.cs"
-"Assets/Stuffwar/01 Home/Scripts/Tomatenprojektil.cs"
-"Assets/Stuffwar/01 Home/Scripts/Userinterface.cs"
-"Assets/Stuffwar/01 Home/Scripts/Wegfindung.cs"
-"Assets/Stuffwar/01 Home/Scripts/ZahnradRotater.cs"
--r:D:\Editor\Editor\Data\Mono\lib\mono\unity\System.Runtime.Serialization.dll
--r:D:\Editor\Editor\Data\Mono\lib\mono\unity\System.Xml.Linq.dll
+-define:UNITY_EDITOR_OSX
+'Assets/Feinderkennung.cs'
+'Assets/GameObjectContainer.cs'
+'Assets/Gameobject.cs'
+'Assets/Health.cs'
+'Assets/HeldCameraController.cs'
+'Assets/HeldController.cs'
+'Assets/LoadGameObject.cs'
+'Assets/Stuffwar/01 Home/Scripts/Bambus.cs'
+'Assets/Stuffwar/01 Home/Scripts/Bambusprojektil.cs'
+'Assets/Stuffwar/01 Home/Scripts/Batterie.cs'
+'Assets/Stuffwar/01 Home/Scripts/CamaraController.cs'
+'Assets/Stuffwar/01 Home/Scripts/EnemyController.cs'
+'Assets/Stuffwar/01 Home/Scripts/EnemySpawn.cs'
+'Assets/Stuffwar/01 Home/Scripts/HouseController.cs'
+'Assets/Stuffwar/01 Home/Scripts/KIDefController.cs'
+'Assets/Stuffwar/01 Home/Scripts/KuehlschrankSpawn.cs'
+'Assets/Stuffwar/01 Home/Scripts/Narzisse.cs'
+'Assets/Stuffwar/01 Home/Scripts/Nektarkugel.cs'
+'Assets/Stuffwar/01 Home/Scripts/StromRotater.cs'
+'Assets/Stuffwar/01 Home/Scripts/Stromspawn.cs'
+'Assets/Stuffwar/01 Home/Scripts/Tomate.cs'
+'Assets/Stuffwar/01 Home/Scripts/Tomatenprojektil.cs'
+'Assets/Stuffwar/01 Home/Scripts/Userinterface.cs'
+'Assets/Stuffwar/01 Home/Scripts/Wegfindung.cs'
+'Assets/Stuffwar/01 Home/Scripts/ZahnradRotater.cs'
+-r:'/Applications/Unity/Unity.app/Contents/Mono/lib/mono/unity/System.Runtime.Serialization.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Mono/lib/mono/unity/System.Xml.Linq.dll'

@@ -9,6 +9,7 @@ public class Health : MonoBehaviour {
     public Texture2D healthTexture;
     private int Position = 30;
 
+
 	// Use this for initialization
 	void Start () 
     {

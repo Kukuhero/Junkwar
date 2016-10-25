@@ -7,6 +7,9 @@ public class HeldController : MonoBehaviour {
     public static bool aktive;
     private Animator anim;
     public bool attack = false;
+    public GameObject smoke;
+    public GameObject crack;
+    private int Sprunganzahl = 0;
 
 	// Use this for initialization
 	void Start () 
@@ -81,6 +84,19 @@ public class HeldController : MonoBehaviour {
         }
 
 
+            
+        if (Input.GetKeyDown(KeyCode.Space) && transform.position.y <= 4 && Sprunganzahl < 2)
+                {
+            gameObject.transform.position += new Vector3(0f, 40f, 0f) * Time.deltaTime;
+            Sprunganzahl++;
+            anim.SetBool("Walk", false);
+                }
+        if(transform.position.y < 1f)
+        {
+            Sprunganzahl = 0;
+        }
+
+
         RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
         int layerMask = 1 << 8;
@@ -91,15 +107,17 @@ public class HeldController : MonoBehaviour {
             if (Vectorlaenge(Vectorberechnung(transform.position, hit.point)) > 2f)
             {
 
-                nRichtungsvector = Vectornormieren(Vectorberechnung(gameObject.transform.position, hit.point));
+                nRichtungsvector = Vectornormieren(Vectorberechnung(gameObject.transform.position, 
+                    new Vector3(Camera.current.transform.position.x,0f,Camera.current.transform.position.z)))*-1f;
                 Normalenberechnung(nRichtungsvector);
                 Debug.DrawLine(gameObject.transform.position, hit.point);
                 Debug.DrawRay(transform.position, Normalenberechnung(nRichtungsvector) * 30f, Color.red);
 
                 //gameObject.transform.LookAt(new Vector3(hit.point.x, transform.position.y, hit.point.z));
-                gameObject.transform.rotation = Quaternion.RotateTowards(gameObject.transform.rotation, 
-                    Quaternion.LookRotation(nRichtungsvector),200f* Time.deltaTime);
-
+                Vector3 rotationVector = transform.rotation.eulerAngles;
+                rotationVector.y += Input.GetAxis("Mouse X") * 10;
+                gameObject.transform.rotation = Quaternion.Euler(rotationVector);
+                print(Input.GetAxis("Mouse Y"));
             
 
                 gameObject.transform.position += 
@@ -133,7 +151,13 @@ public class HeldController : MonoBehaviour {
         aktive = false;
         anim.SetBool("Attack", true);
         anim.SetBool("Walk", false);
+        Vector3 rotationVector = transform.rotation.eulerAngles;
+        rotationVector.x += 90;
+        rotationVector.y+= -90;
+        Instantiate(crack, new Vector3 (gameObject.transform.position.x,0.1f,gameObject.transform.position.z)+ 6*nRichtungsvector,Quaternion.Euler(rotationVector));
+        Instantiate(smoke, new Vector3 (gameObject.transform.position.x,0f,gameObject.transform.position.z)+ 6*nRichtungsvector, gameObject.transform.rotation);
         yield return new WaitForSeconds(1);
+        print("Instantiate");
         anim.SetBool("Attack", false);
         aktive = true;
         attack = false;

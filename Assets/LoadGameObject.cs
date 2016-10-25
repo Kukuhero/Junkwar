@@ -10,7 +10,7 @@ public class LoadGameObject : MonoBehaviour {
 	public const string path = "GameObjectstats";
 	// Use this for initialization
 	void Start () {
-
+        
 		GameObjectContainer go = GameObjectContainer.Load (path);
 		print (go.Gameobjects.Count);
 		GameObject[] Gameobjects = new GameObject[go.Gameobjects.Count];
@@ -23,16 +23,16 @@ public class LoadGameObject : MonoBehaviour {
 			Gameobjects [i].GetComponent<Health> ().health = Gameobject.Health;
 			Gameobjects [i].AddComponent<Animator> ();
 			Gameobjects [i].AddComponent<BoxCollider> ();
-			Gameobjects [i].GetComponent<BoxCollider> ().size.x = Gameobject.collidersizex;
-			Gameobjects [i].GetComponent<BoxCollider> ().size.y = Gameobject.collidersizey;
-			Gameobjects [i].GetComponent<BoxCollider> ().size.z = Gameobject.collidersizez;
-			Gameobjects [i].GetComponent<BoxCollider> ().center.x = Gameobject.colliderposx;
-			Gameobjects [i].GetComponent<BoxCollider> ().center.y = Gameobject.colliderposy;
-			Gameobjects [i].GetComponent<BoxCollider> ().center.z = Gameobject.colliderposz;
+            Gameobjects [i].GetComponent<BoxCollider> ().size = new Vector3(Gameobject.collidersizex,Gameobject.collidersizey,Gameobject.collidersizez);
+			//Gameobjects [i].GetComponent<BoxCollider> ().size.y = Gameobject.collidersizey;
+			//Gameobjects [i].GetComponent<BoxCollider> ().size.z = Gameobject.collidersizez;
+            Gameobjects [i].GetComponent<BoxCollider> ().center = new Vector3(Gameobject.colliderposx,Gameobject.colliderposy,Gameobject.colliderposz);
+			//Gameobjects [i].GetComponent<BoxCollider> ().center.y = Gameobject.colliderposy;
+			//Gameobjects [i].GetComponent<BoxCollider> ().center.z = Gameobject.colliderposz;
 		}
 
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 	
