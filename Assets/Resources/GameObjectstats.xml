@@ -4,10 +4,31 @@
 		<Gameobject name = "Nagelheld">
 		 <damage>50</damage>
 		 <health>100</health>
+		 <splash>10</splash>
+		 <collidersizex>3</collidersizex>
+		 <collidersizey>3</collidersizey>
+		 <collidersizez>3</collidersizez>
+		 <colliderposx>3</colliderposx>
+		 <colliderposy>3</colliderposy>
+		 <colliderposz>3</colliderposz>
+		 <loot>1</loot>
+		 <speed>10</speed>
+		 <path>/Stuffwar/mods/Narzisse.obj</path>
 		</Gameobject>
 		<Gameobject name = "Wollheld">
 		 <damage>100</damage>
 		 <health>1000</health>
+		 <splash>10</splash>
+		 <collidersizex>3</collidersizex>
+		 <collidersizey>3</collidersizey>
+		 <collidersizez>3</collidersizez>
+		 <colliderposx>3</colliderposx>
+		 <colliderposy>3</colliderposy>
+		 <colliderposz>3</colliderposz>
+		 <loot>1</loot>
+		 <speed>10</speed>
+		 <path>/Stuffwar/mods/Narzisse.obj</path>
+	
 		</Gameobject>
 	</GameObjects>
 </GameObjectCollection>

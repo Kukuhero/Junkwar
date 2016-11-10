@@ -27,5 +27,7 @@ public class Gameobject  {
 	public int loot;
 	[XmlElement("speed")]
 	public int speed;
+	[XmlElement("path")]
+	public string path;
 
 }

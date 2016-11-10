@@ -15,6 +15,15 @@ public class LoadGameObject : MonoBehaviour {
 		print (go.Gameobjects.Count);
 		GameObject[] Gameobjects = new GameObject[go.Gameobjects.Count];
 		foreach (Gameobject Gameobject in go.Gameobjects) {
+			Gameobjects [i] = new GameObject();
+			Mesh holderMesh = new Mesh();
+			ObjImporter newMesh = new ObjImporter();print (Application.dataPath + Gameobject.path);
+			holderMesh = newMesh.ImportFile(Application.dataPath+Gameobject.path);
+
+			Gameobjects[i].AddComponent<MeshRenderer>();
+			Gameobjects[i].AddComponent<MeshFilter>();
+
+			Gameobjects[i].GetComponent<MeshFilter>().mesh = holderMesh;
 			print (Gameobject.Name);
 			Gameobjects [i].name = Gameobject.Name;
 			Gameobjects [i].AddComponent<HeldController> ();
@@ -29,6 +38,8 @@ public class LoadGameObject : MonoBehaviour {
             Gameobjects [i].GetComponent<BoxCollider> ().center = new Vector3(Gameobject.colliderposx,Gameobject.colliderposy,Gameobject.colliderposz);
 			//Gameobjects [i].GetComponent<BoxCollider> ().center.y = Gameobject.colliderposy;
 			//Gameobjects [i].GetComponent<BoxCollider> ().center.z = Gameobject.colliderposz;
+			print (Gameobject.Name);
+			//Instantiate (Gameobjects [i]);
 		}
 
 	}
