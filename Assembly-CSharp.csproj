@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{FF2782B1-0DEA-9A9B-2FB4-0B74D9A6A427}</ProjectGuid>
+    <ProjectGuid>{1CF9B1D3-7094-8B9B-015D-FF0DF011F50A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -45,31 +45,32 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Feinderkennung.cs" />
-     <Compile Include="Assets\GameObjectContainer.cs" />
-     <Compile Include="Assets\Gameobject.cs" />
-     <Compile Include="Assets\Health.cs" />
-     <Compile Include="Assets\HeldCameraController.cs" />
-     <Compile Include="Assets\HeldController.cs" />
-     <Compile Include="Assets\LoadGameObject.cs" />
-     <Compile Include="Assets\Stuffwar\01 Home\Scripts\Bambus.cs" />
-     <Compile Include="Assets\Stuffwar\01 Home\Scripts\Bambusprojektil.cs" />
-     <Compile Include="Assets\Stuffwar\01 Home\Scripts\Batterie.cs" />
-     <Compile Include="Assets\Stuffwar\01 Home\Scripts\CamaraController.cs" />
-     <Compile Include="Assets\Stuffwar\01 Home\Scripts\EnemyController.cs" />
-     <Compile Include="Assets\Stuffwar\01 Home\Scripts\EnemySpawn.cs" />
-     <Compile Include="Assets\Stuffwar\01 Home\Scripts\HouseController.cs" />
-     <Compile Include="Assets\Stuffwar\01 Home\Scripts\KIDefController.cs" />
-     <Compile Include="Assets\Stuffwar\01 Home\Scripts\KuehlschrankSpawn.cs" />
-     <Compile Include="Assets\Stuffwar\01 Home\Scripts\Narzisse.cs" />
-     <Compile Include="Assets\Stuffwar\01 Home\Scripts\Nektarkugel.cs" />
-     <Compile Include="Assets\Stuffwar\01 Home\Scripts\StromRotater.cs" />
-     <Compile Include="Assets\Stuffwar\01 Home\Scripts\Stromspawn.cs" />
-     <Compile Include="Assets\Stuffwar\01 Home\Scripts\Tomate.cs" />
-     <Compile Include="Assets\Stuffwar\01 Home\Scripts\Tomatenprojektil.cs" />
-     <Compile Include="Assets\Stuffwar\01 Home\Scripts\Userinterface.cs" />
-     <Compile Include="Assets\Stuffwar\01 Home\Scripts\Wegfindung.cs" />
-     <Compile Include="Assets\Stuffwar\01 Home\Scripts\ZahnradRotater.cs" />
+     <Compile Include="Assets\Scripts\Bambus.cs" />
+     <Compile Include="Assets\Scripts\Bambusprojektil.cs" />
+     <Compile Include="Assets\Scripts\Batterie.cs" />
+     <Compile Include="Assets\Scripts\CamaraController.cs" />
+     <Compile Include="Assets\Scripts\EnemyController.cs" />
+     <Compile Include="Assets\Scripts\EnemySpawn.cs" />
+     <Compile Include="Assets\Scripts\Feinderkennung.cs" />
+     <Compile Include="Assets\Scripts\GameObjectContainer.cs" />
+     <Compile Include="Assets\Scripts\Gameobject.cs" />
+     <Compile Include="Assets\Scripts\Health.cs" />
+     <Compile Include="Assets\Scripts\HeldCameraController.cs" />
+     <Compile Include="Assets\Scripts\HeldController.cs" />
+     <Compile Include="Assets\Scripts\HouseController.cs" />
+     <Compile Include="Assets\Scripts\KIDefController.cs" />
+     <Compile Include="Assets\Scripts\KuehlschrankSpawn.cs" />
+     <Compile Include="Assets\Scripts\LoadGameObject.cs" />
+     <Compile Include="Assets\Scripts\Narzisse.cs" />
+     <Compile Include="Assets\Scripts\Nektarkugel.cs" />
+     <Compile Include="Assets\Scripts\ObjImporter.cs" />
+     <Compile Include="Assets\Scripts\StromRotater.cs" />
+     <Compile Include="Assets\Scripts\Stromspawn.cs" />
+     <Compile Include="Assets\Scripts\Tomate.cs" />
+     <Compile Include="Assets\Scripts\Tomatenprojektil.cs" />
+     <Compile Include="Assets\Scripts\Userinterface.cs" />
+     <Compile Include="Assets\Scripts\Wegfindung.cs" />
+     <Compile Include="Assets\Scripts\ZahnradRotater.cs" />
      <None Include="Assets\Resources\GameObjectstats.xml" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

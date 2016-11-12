@@ -1,4 +1,1 @@
-sceneSetups:
-- path: Assets/Stuffwar/01 Home/01 Home.unity
-  isLoaded: 1
-  isActive: 1
+sceneSetups: []

@@ -13,7 +13,9 @@
 		 <colliderposz>3</colliderposz>
 		 <loot>1</loot>
 		 <speed>10</speed>
-		 <path>/Stuffwar/mods/Narzisse.obj</path>
+		 <path>/mods/Narzisse.obj</path>
+		 <script>Wegfindung</script>
+		 <type>Held</type>
 		</Gameobject>
 		<Gameobject name = "Wollheld">
 		 <damage>100</damage>
@@ -27,8 +29,9 @@
 		 <colliderposz>3</colliderposz>
 		 <loot>1</loot>
 		 <speed>10</speed>
-		 <path>/Stuffwar/mods/Narzisse.obj</path>
-	
+		 <path>/mods/Narzisse.obj</path>
+		 <script>Wegfindung</script>
+		 <type>Held</type>
 		</Gameobject>
 	</GameObjects>
 </GameObjectCollection>
