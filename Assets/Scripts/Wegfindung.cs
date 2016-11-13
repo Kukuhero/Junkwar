@@ -16,11 +16,14 @@ public class Wegfindung : MonoBehaviour {
 	public Transform currenttarget;
 	private bool Wegpunktvar;
 	public float speed;
+    private bool inTriggerEnemy = false;
+    private float Initiatedspeed;
 
 
 	// Use this for initialization
 	void Start () 
 	{
+        Initiatedspeed = speed;
 		Wegpunkte [1] = target;
 		currenttarget = target;
 		FreierWeg ();
@@ -230,18 +233,42 @@ public class Wegfindung : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other)
 	{
+        switch(other.tag)
+        {
 		//////print ("inTrigger"+other.transform.gameObject);
-		if (other.tag == "plant") 
-		{
+            case  "plant":
+		
 			////print ("planttrigger");
-		}
-		if (other.gameObject.transform == currenttarget) 
-		{
-			////print ("istTarget");
-			//StartCoroutine (Triggerabfrage());
-			FreierWeg();
-		}
+                break;
+           
+                break;
+        case "Enemy":
+
+        if (!inTriggerEnemy) 
+        {
+            inTriggerEnemy = true;
+            speed -= Random.Range (1, 2);
+        }
+        break;
+        }
+        if(other.gameObject.transform == currenttarget)
+        {
+            ////print ("istTarget");
+            //StartCoroutine (Triggerabfrage());
+            FreierWeg();
+        }
 	}
+    void OnTriggerExit (Collider other)
+    {
+        switch (other.tag) 
+        {
+
+            case "Enemy":
+                inTriggerEnemy = false;
+                speed = Initiatedspeed;
+                break;
+        }
+    }
 
 /*	void OnCollisionEnter(Collision collision)
 	{
