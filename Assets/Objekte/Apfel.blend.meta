@@ -1,0 +1,158 @@
+fileFormatVersion: 2
+guid: 956587c4735c54b129b91722bdb7e5f0
+timeCreated: 1478948899
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Armature
+    100004: Circle
+    100006: Circle_001
+    100008: Circle_002
+    100010: Circle_003
+    100012: Circle_004
+    100014: Circle_005
+    100016: Circle_006
+    100018: Circle_007
+    100020: Circle_008
+    100022: Circle_009
+    100024: Ellenbogen_l
+    100026: Ellenbogen_r
+    100028: Fu__l
+    100030: Fu__r
+    100032: Hand_l
+    100034: Hand_r
+    100036: K_rper
+    100038: Knie_l
+    100040: Knie_r
+    100042: Oberarm_l
+    100044: Oberarm_r
+    100046: Oberschenkel_l
+    100048: Oberschenkel_r
+    100050: Schienbein_l
+    100052: Schienbein_l_001
+    100054: Schienbein_r
+    100056: Schienbein_r_001
+    100058: Strunk
+    100060: Unterarm_l
+    100062: Unterarm_r
+    400000: //RootNode
+    400002: Armature
+    400004: Circle
+    400006: Circle_001
+    400008: Circle_002
+    400010: Circle_003
+    400012: Circle_004
+    400014: Circle_005
+    400016: Circle_006
+    400018: Circle_007
+    400020: Circle_008
+    400022: Circle_009
+    400024: Ellenbogen_l
+    400026: Ellenbogen_r
+    400028: Fu__l
+    400030: Fu__r
+    400032: Hand_l
+    400034: Hand_r
+    400036: K_rper
+    400038: Knie_l
+    400040: Knie_r
+    400042: Oberarm_l
+    400044: Oberarm_r
+    400046: Oberschenkel_l
+    400048: Oberschenkel_r
+    400050: Schienbein_l
+    400052: Schienbein_l_001
+    400054: Schienbein_r
+    400056: Schienbein_r_001
+    400058: Strunk
+    400060: Unterarm_l
+    400062: Unterarm_r
+    4300000: Circle
+    4300002: Circle_009
+    4300004: Circle_008
+    4300006: Circle_007
+    4300008: Circle_006
+    4300010: Circle_005
+    4300012: Circle_004
+    4300014: Circle_003
+    4300016: Circle_002
+    4300018: Circle_001
+    7400000: Default Take
+    7400002: ArmatureAction
+    9500000: //RootNode
+    13700000: Circle
+    13700002: Circle_001
+    13700004: Circle_002
+    13700006: Circle_003
+    13700008: Circle_004
+    13700010: Circle_005
+    13700012: Circle_006
+    13700014: Circle_007
+    13700016: Circle_008
+    13700018: Circle_009
+  materials:
+    importMaterials: 1
+    materialName: 2
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 1
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

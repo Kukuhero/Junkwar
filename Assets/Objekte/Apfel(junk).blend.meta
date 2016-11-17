@@ -1,0 +1,436 @@
+fileFormatVersion: 2
+guid: c98bb214a38554c72858c67a53e6d278
+timeCreated: 1478949536
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Armature
+    100004: Circle_000
+    100006: Circle_001
+    100008: Circle_002
+    100010: Circle_003
+    100012: Circle_004
+    100014: Circle_005
+    100016: Circle_006
+    100018: Circle_007
+    100020: Circle_008
+    100022: Circle_009
+    100024: Ellenbogen_l
+    100026: Ellenbogen_r
+    100028: Fu__IK_l
+    100030: Fu__IK_r
+    100032: Fu__l
+    100034: Fu__r
+    100036: Hand_l
+    100038: Hand_r
+    100040: K_rper
+    100042: Knie_l
+    100044: Knie_r
+    100046: Oberarm_l
+    100048: Oberarm_r
+    100050: Oberschenkel_l
+    100052: Oberschenkel_r
+    100054: Schienbein_l
+    100056: Schienbein_r
+    100058: Stiel
+    100060: Unterarm_l
+    100062: Unterarm_r
+    400000: //RootNode
+    400002: Armature
+    400004: Circle_000
+    400006: Circle_001
+    400008: Circle_002
+    400010: Circle_003
+    400012: Circle_004
+    400014: Circle_005
+    400016: Circle_006
+    400018: Circle_007
+    400020: Circle_008
+    400022: Circle_009
+    400024: Ellenbogen_l
+    400026: Ellenbogen_r
+    400028: Fu__IK_l
+    400030: Fu__IK_r
+    400032: Fu__l
+    400034: Fu__r
+    400036: Hand_l
+    400038: Hand_r
+    400040: K_rper
+    400042: Knie_l
+    400044: Knie_r
+    400046: Oberarm_l
+    400048: Oberarm_r
+    400050: Oberschenkel_l
+    400052: Oberschenkel_r
+    400054: Schienbein_l
+    400056: Schienbein_r
+    400058: Stiel
+    400060: Unterarm_l
+    400062: Unterarm_r
+    4300000: Circle_001
+    4300002: Circle_002
+    4300004: Circle_000
+    4300006: Circle_004
+    4300008: Circle_003
+    4300010: Circle_009
+    4300012: Circle_006
+    4300014: Circle_007
+    4300016: Circle_005
+    4300018: Circle_008
+    7400000: Default Take
+    7400002: Walk
+    7400004: Idle
+    7400006: Shoot
+    9500000: //RootNode
+    13700000: Circle_000
+    13700002: Circle_001
+    13700004: Circle_002
+    13700006: Circle_003
+    13700008: Circle_004
+    13700010: Circle_005
+    13700012: Circle_006
+    13700014: Circle_007
+    13700016: Circle_008
+    13700018: Circle_009
+  materials:
+    importMaterials: 1
+    materialName: 2
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Idle
+      takeName: ArmatureAction
+      firstFrame: 0
+      lastFrame: 90
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Ellenbogen_l
+        weight: 1
+      - path: Armature/Ellenbogen_r
+        weight: 1
+      - path: Armature/Fu__IK_l
+        weight: 1
+      - path: Armature/Fu__IK_r
+        weight: 1
+      - path: Armature/Hand_l
+        weight: 1
+      - path: Armature/Hand_r
+        weight: 1
+      - path: Armature/K_rper
+        weight: 1
+      - path: Armature/K_rper/Oberarm_l
+        weight: 1
+      - path: Armature/K_rper/Oberarm_l/Unterarm_l
+        weight: 1
+      - path: Armature/K_rper/Oberarm_r
+        weight: 1
+      - path: Armature/K_rper/Oberarm_r/Unterarm_r
+        weight: 1
+      - path: Armature/K_rper/Oberschenkel_l
+        weight: 1
+      - path: Armature/K_rper/Oberschenkel_l/Schienbein_l
+        weight: 1
+      - path: Armature/K_rper/Oberschenkel_l/Schienbein_l/Fu__l
+        weight: 1
+      - path: Armature/K_rper/Oberschenkel_r
+        weight: 1
+      - path: Armature/K_rper/Oberschenkel_r/Schienbein_r
+        weight: 1
+      - path: Armature/K_rper/Oberschenkel_r/Schienbein_r/Fu__r
+        weight: 1
+      - path: Armature/K_rper/Stiel
+        weight: 1
+      - path: Armature/Knie_l
+        weight: 1
+      - path: Armature/Knie_r
+        weight: 1
+      - path: Circle_000
+        weight: 1
+      - path: Circle_001
+        weight: 1
+      - path: Circle_002
+        weight: 1
+      - path: Circle_003
+        weight: 1
+      - path: Circle_004
+        weight: 1
+      - path: Circle_005
+        weight: 1
+      - path: Circle_006
+        weight: 1
+      - path: Circle_007
+        weight: 1
+      - path: Circle_008
+        weight: 1
+      - path: Circle_009
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Walk
+      takeName: ArmatureAction
+      firstFrame: 120
+      lastFrame: 240
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Ellenbogen_l
+        weight: 1
+      - path: Armature/Ellenbogen_r
+        weight: 1
+      - path: Armature/Fu__IK_l
+        weight: 1
+      - path: Armature/Fu__IK_r
+        weight: 1
+      - path: Armature/Hand_l
+        weight: 1
+      - path: Armature/Hand_r
+        weight: 1
+      - path: Armature/K_rper
+        weight: 1
+      - path: Armature/K_rper/Oberarm_l
+        weight: 1
+      - path: Armature/K_rper/Oberarm_l/Unterarm_l
+        weight: 1
+      - path: Armature/K_rper/Oberarm_r
+        weight: 1
+      - path: Armature/K_rper/Oberarm_r/Unterarm_r
+        weight: 1
+      - path: Armature/K_rper/Oberschenkel_l
+        weight: 1
+      - path: Armature/K_rper/Oberschenkel_l/Schienbein_l
+        weight: 1
+      - path: Armature/K_rper/Oberschenkel_l/Schienbein_l/Fu__l
+        weight: 1
+      - path: Armature/K_rper/Oberschenkel_r
+        weight: 1
+      - path: Armature/K_rper/Oberschenkel_r/Schienbein_r
+        weight: 1
+      - path: Armature/K_rper/Oberschenkel_r/Schienbein_r/Fu__r
+        weight: 1
+      - path: Armature/K_rper/Stiel
+        weight: 1
+      - path: Armature/Knie_l
+        weight: 1
+      - path: Armature/Knie_r
+        weight: 1
+      - path: Circle_000
+        weight: 1
+      - path: Circle_001
+        weight: 1
+      - path: Circle_002
+        weight: 1
+      - path: Circle_003
+        weight: 1
+      - path: Circle_004
+        weight: 1
+      - path: Circle_005
+        weight: 1
+      - path: Circle_006
+        weight: 1
+      - path: Circle_007
+        weight: 1
+      - path: Circle_008
+        weight: 1
+      - path: Circle_009
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Shoot
+      takeName: ArmatureAction
+      firstFrame: 290
+      lastFrame: 296
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Ellenbogen_l
+        weight: 1
+      - path: Armature/Ellenbogen_r
+        weight: 1
+      - path: Armature/Fu__IK_l
+        weight: 1
+      - path: Armature/Fu__IK_r
+        weight: 1
+      - path: Armature/Hand_l
+        weight: 1
+      - path: Armature/Hand_r
+        weight: 1
+      - path: Armature/K_rper
+        weight: 1
+      - path: Armature/K_rper/Oberarm_l
+        weight: 1
+      - path: Armature/K_rper/Oberarm_l/Unterarm_l
+        weight: 1
+      - path: Armature/K_rper/Oberarm_r
+        weight: 1
+      - path: Armature/K_rper/Oberarm_r/Unterarm_r
+        weight: 1
+      - path: Armature/K_rper/Oberschenkel_l
+        weight: 1
+      - path: Armature/K_rper/Oberschenkel_l/Schienbein_l
+        weight: 1
+      - path: Armature/K_rper/Oberschenkel_l/Schienbein_l/Fu__l
+        weight: 1
+      - path: Armature/K_rper/Oberschenkel_r
+        weight: 1
+      - path: Armature/K_rper/Oberschenkel_r/Schienbein_r
+        weight: 1
+      - path: Armature/K_rper/Oberschenkel_r/Schienbein_r/Fu__r
+        weight: 1
+      - path: Armature/K_rper/Stiel
+        weight: 1
+      - path: Armature/Knie_l
+        weight: 1
+      - path: Armature/Knie_r
+        weight: 1
+      - path: Circle_000
+        weight: 1
+      - path: Circle_001
+        weight: 1
+      - path: Circle_002
+        weight: 1
+      - path: Circle_003
+        weight: 1
+      - path: Circle_004
+        weight: 1
+      - path: Circle_005
+        weight: 1
+      - path: Circle_006
+        weight: 1
+      - path: Circle_007
+        weight: 1
+      - path: Circle_008
+        weight: 1
+      - path: Circle_009
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 2
+    meshCompression: 0
+    addColliders: 1
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,22 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Wegfindung.cs">
+    <Files>
+      <File FileName="Assets/Scripts/ApfelEnemyController.cs" Line="64" Column="5" />
+      <File FileName="Assets/Scripts/Feinderkennung.cs" Line="135" Column="13" />
+      <File FileName="Assets/ApfelkernController.cs" Line="24" Column="33" />
+      <File FileName="Assets/Scripts/Health.cs" Line="25" Column="24" />
+      <File FileName="Assets/Scripts/Wegfindung.cs" Line="50" Column="20" />
+      <File FileName="Assets/Scripts/EnemyController.cs" Line="128" Column="1" />
+      <File FileName="Assets/Scripts/HeldController.cs" Line="8" Column="5" />
+      <File FileName="Assets/Scripts/Bambusprojektil.cs" Line="42" Column="2" />
+      <File FileName="Assets/Scripts/EnemySpawn.cs" Line="24" Column="15" />
+      <File FileName="Assets/Scripts/Muendungsfeuer.cs" Line="13" Column="44" />
+      <File FileName="Assets/Scripts/HouseController.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

@@ -37,7 +37,7 @@ public class Wegfindung : MonoBehaviour {
             currenttarget = target;*/
 		//print (currenttarget);
 		targetdistance = Vectorlaenge(Vectorberechnung(transform.position, currenttarget.transform.position));
-		transform.position += (currenttarget.position - transform.position) * (1/targetdistance) * speed * Time.deltaTime;
+        transform.position += (new Vector3(currenttarget.position.x,transform.position.y,currenttarget.position.x) - transform.position) * (1/targetdistance) * speed * Time.deltaTime;
 		//////print (target);
 	}
 
