@@ -35,10 +35,11 @@ public class Wegfindung : MonoBehaviour {
 	{
         /*if (currenttarget == null)
             currenttarget = target;*/
-		//print (currenttarget);
+		print (currenttarget);
 		targetdistance = Vectorlaenge(Vectorberechnung(transform.position, currenttarget.transform.position));
         transform.position += (new Vector3(currenttarget.position.x,transform.position.y,currenttarget.position.x) - transform.position) * (1/targetdistance) * speed * Time.deltaTime;
-		//////print (target);
+		//print (target);
+		//print(new Vector3(currenttarget.position.x,transform.position.y,currenttarget.position.x) - transform.position * (1/targetdistance) * speed * Time.deltaTime);
 	}
 
 	void FreierWeg()
@@ -48,28 +49,29 @@ public class Wegfindung : MonoBehaviour {
 		Wegpunktvar = true;
 		RaycastHit hit;
 		targetdistance = Vectorlaenge (Vectorberechnung (transform.position, target.transform.position));
-		Vector3 ray = target.transform.position-transform.position;
-		Debug.DrawRay (transform.position, ray, Color.blue, 3f);
+		Vector3 ray = target.transform.position-new Vector3(transform.position.x,/*0f+target.*/transform.position.y,transform.position.z);
+		//Debug.DrawRay (transform.position, ray, Color.blue, 3f);
+		ExtDebug.DrawBoxCastBox(transform.position,GetComponent<Collider>().bounds.size/3.3f,transform.rotation,ray,targetdistance,Color.black);
 		int layerMask = 1 << 10;
 		//layerMask = ~layerMask;
 		//////print (GetComponent<Collider>().bounds.size);
-		if (Physics.BoxCast(transform.position,GetComponent<Collider>().bounds.size/2.3f,ray,out hit ,transform.rotation,targetdistance,layerMask)) 
+		if (Physics.BoxCast(transform.position,GetComponent<Collider>().bounds.size/3.3f,ray,out hit ,transform.rotation,targetdistance,layerMask)) 
 		{
 			////print ("inif5");
 			switch (hit.collider.tag) 
 			{
 			case("Haus"):
-				//print ("Hausteil " + hit.collider.gameObject);
+				print ("Hausteil " + hit.collider.gameObject);
 				currenttarget = target;
 				break;
 
 			case("Hinderniss"):
-				//print ("Weg versperrt" + hit.collider.gameObject);
+				print ("Weg versperrt" + hit.collider.gameObject);
 				Wegfinden (hit.collider.gameObject);
 				break;
 				
 				default:
-				////print ("Weg versperrt2" + hit.collider.gameObject);
+				print ("Weg versperrt2" + hit.collider.gameObject);
 				//Wegfinden (hit.collider.gameObject);
 				break;
 
@@ -117,8 +119,9 @@ public class Wegfindung : MonoBehaviour {
 				//////print (ikleinstestotaldistance);
 				RaycastHit hit;
 				targetdistance = Vectorlaenge (Vectorberechnung (transform.position, Wegpunkte[ikleinstestotaldistance].position));
-				Vector3 ray =  Wegpunkte[ikleinstestotaldistance].position - transform.position;
-				Debug.DrawRay (transform.position, ray, Color.green, 3f);
+				Vector3 ray =  Wegpunkte[ikleinstestotaldistance].position - new Vector3(transform.position.x,0f+target.transform.position.y,transform.position.z);
+				//Debug.DrawRay (transform.position, ray, Color.green, 3f);
+				ExtDebug.DrawBoxCastBox (transform.position, GetComponent<Collider> ().bounds.size / 2.3f, transform.rotation, ray, targetdistance, Color.green);
 				int layerMask = 1 << 10;
 				//layerMask = ~layerMask;
 				////print (Physics.Raycast (transform.position, ray, out hit, layerMask));
@@ -195,9 +198,10 @@ public class Wegfindung : MonoBehaviour {
 	bool wegfreiberechnung(Vector3 Wegpunktposition)
 	{
 		RaycastHit hit;
-		targetdistance = Vectorlaenge (Vectorberechnung (transform.position, Wegpunktposition));
-		Vector3 ray =  Wegpunktposition - transform.position;
-		Debug.DrawRay (transform.position, ray, Color.red, 3f);
+		targetdistance = Vectorlaenge (Vectorberechnung (new Vector3(transform.position.x,0f,transform.position.z), Wegpunktposition));
+		Vector3 ray =  Wegpunktposition - new Vector3(transform.position.x,0f+target.transform.position.y,transform.position.z);
+		//Debug.DrawRay (transform.position, ray, Color.red, 3f);
+		ExtDebug.DrawBoxCastBox (transform.position, GetComponent<Collider> ().bounds.size / 2.3f, transform.rotation, ray, targetdistance, Color.red);
 		int layerMask = 1 << 10;
 		//layerMask = ~layerMask;
 		if (Physics.BoxCast(transform.position,GetComponent<Collider>().bounds.size/2.3f,ray,out hit ,transform.rotation,targetdistance,layerMask)) 
