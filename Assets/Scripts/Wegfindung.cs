@@ -18,33 +18,36 @@ public class Wegfindung : MonoBehaviour {
 	public float speed;
     private bool inTriggerEnemy = false;
     private float Initiatedspeed;
-
+	private bool Coroutinebool = true; 
 
 	// Use this for initialization
 	void Start () 
 	{
+		print ("wegstart");
         Initiatedspeed = speed;
 		Wegpunkte [1] = target;
 		currenttarget = target;
 		FreierWeg ();
+		StartCoroutine (Triggerabfrage ());
 
 	}
 	
 	// Update is called once per frame
 	void Update () 
-	{
+	{	//if (!Coroutinebool)
+		//	StopCoroutine (Triggerabfrage ());
         /*if (currenttarget == null)
             currenttarget = target;*/
-		print (currenttarget);
+		print (currenttarget.position);
 		targetdistance = Vectorlaenge(Vectorberechnung(transform.position, currenttarget.transform.position));
-        transform.position += (new Vector3(currenttarget.position.x,transform.position.y,currenttarget.position.x) - transform.position) * (1/targetdistance) * speed * Time.deltaTime;
+		transform.position += (new Vector3(currenttarget.position.x,1f,currenttarget.position.z)/*currenttarget.position*/ - transform.position) * (1/targetdistance) * speed * Time.deltaTime;
 		//print (target);
 		//print(new Vector3(currenttarget.position.x,transform.position.y,currenttarget.position.x) - transform.position * (1/targetdistance) * speed * Time.deltaTime);
 	}
 
 	void FreierWeg()
 	{
-		StopCoroutine(Triggerabfrage());
+		//StopCoroutine(Triggerabfrage());
 		////print ("infreierWeg");
 		Wegpunktvar = true;
 		RaycastHit hit;
@@ -78,8 +81,8 @@ public class Wegfindung : MonoBehaviour {
 				
 			}
 		}
-
-	
+		//StartCoroutine (Triggerabfrage());
+		//print ("should work");
 	}
 		
 
@@ -258,8 +261,8 @@ public class Wegfindung : MonoBehaviour {
         if(other.gameObject.transform == currenttarget)
         {
             ////print ("istTarget");
-            //StartCoroutine (Triggerabfrage());
-            FreierWeg();
+           // StartCoroutine (Triggerabfrage());
+           // FreierWeg();
         }
 	}
     void OnTriggerExit (Collider other)
@@ -284,19 +287,19 @@ public class Wegfindung : MonoBehaviour {
 
 	IEnumerator Triggerabfrage()
 	{
-		bool Coroutinebool = true; 
+		Coroutinebool = true; 
 		while (Coroutinebool)
 		{
-			//print("inTriggerabfrage");
+			print("inTriggerabfrage");
 			if (gameObject.transform.position.x <= currenttarget.position.x + 0.1f && gameObject.transform.position.z <= currenttarget.position.z+ 0.01f
 				&& gameObject.transform.position.x >= currenttarget.position.x - 0.1f && gameObject.transform.position.z >= currenttarget.position.z - 0.01f)
 			{
 				//print(" inIfTriggerabfrage");
 				FreierWeg();
-				Coroutinebool = false;
+				//Coroutinebool = false;
 				//print("nicht break");
 			}
-			yield return new WaitForSeconds(0.01f);
+			yield return new WaitForSeconds(0.002f);
 		}
 	}
 
