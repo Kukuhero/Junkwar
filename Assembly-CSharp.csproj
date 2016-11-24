@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\ApfelkernController.cs" />
+     <Compile Include="Assets\MacaroniArtillerieController.cs" />
      <Compile Include="Assets\Scripts\ApfelEnemyController.cs" />
      <Compile Include="Assets\Scripts\Bambus.cs" />
      <Compile Include="Assets\Scripts\Bambusprojektil.cs" />
@@ -53,6 +54,7 @@
      <Compile Include="Assets\Scripts\CamaraController.cs" />
      <Compile Include="Assets\Scripts\EnemyController.cs" />
      <Compile Include="Assets\Scripts\EnemySpawn.cs" />
+     <Compile Include="Assets\Scripts\ExtDebug.cs" />
      <Compile Include="Assets\Scripts\Feinderkennung.cs" />
      <Compile Include="Assets\Scripts\GameObjectContainer.cs" />
      <Compile Include="Assets\Scripts\Gameobject.cs" />
