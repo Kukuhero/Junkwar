@@ -36,8 +36,8 @@ public class Wegfindung : MonoBehaviour {
 	void Update () 
 	{	//if (!Coroutinebool)
 		//	StopCoroutine (Triggerabfrage ());
-        /*if (currenttarget == null)
-            currenttarget = target;*/
+		if (currenttarget == null || gameObject.tag == "Friendly" && currenttarget.tag != "Wegpunkt")
+            currenttarget = target;
 		print (currenttarget.position);
 		targetdistance = Vectorlaenge(Vectorberechnung(transform.position, currenttarget.transform.position));
 		transform.position += (new Vector3(currenttarget.position.x,1f,currenttarget.position.z)/*currenttarget.position*/ - transform.position) * (1/targetdistance) * speed * Time.deltaTime;
