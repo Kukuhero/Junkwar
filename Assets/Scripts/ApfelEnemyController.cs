@@ -13,8 +13,8 @@ public class ApfelEnemyController : MonoBehaviour {
     public Transform Spawnpoint_l;
     public GameObject Apfelkern;
     private bool inattack = false;
-    public static GameObject[] target = new GameObject[50];
-    public static int x = 0;
+    public GameObject[] target = new GameObject[50];
+    public int x = 0;
     public GameObject Mündungsfeuer;
 
 
@@ -175,9 +175,9 @@ public class ApfelEnemyController : MonoBehaviour {
             } else {*/
                 
                     
-                    Instantiate(Apfelkern, Spawnpoint_r.transform.position, transform.rotation);
+            Instantiate(Apfelkern, Spawnpoint_r.transform.position, transform.rotation,transform.parent);
                     Instantiate(Mündungsfeuer, Spawnpoint_r.transform.position, transform.rotation);
-                    Instantiate(Apfelkern, Spawnpoint_l.transform.position, transform.rotation);
+                    Instantiate(Apfelkern, Spawnpoint_l.transform.position, transform.rotation, transform.parent);
                     Instantiate(Mündungsfeuer, Spawnpoint_l.transform.position, transform.rotation);
 
            // }

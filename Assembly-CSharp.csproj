@@ -47,6 +47,7 @@
   <ItemGroup>
      <Compile Include="Assets\ApfelkernController.cs" />
      <Compile Include="Assets\MacaroniArtillerieController.cs" />
+     <Compile Include="Assets\NudelProjektilController.cs" />
      <Compile Include="Assets\Scripts\ApfelEnemyController.cs" />
      <Compile Include="Assets\Scripts\Bambus.cs" />
      <Compile Include="Assets\Scripts\Bambusprojektil.cs" />

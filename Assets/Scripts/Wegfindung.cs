@@ -23,7 +23,7 @@ public class Wegfindung : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-		print ("wegstart");
+        print ("wegstart "+ gameObject.tag + speed);
         Initiatedspeed = speed;
 		Wegpunkte [1] = target;
 		currenttarget = target;
@@ -38,7 +38,7 @@ public class Wegfindung : MonoBehaviour {
 		//	StopCoroutine (Triggerabfrage ());
 		if (currenttarget == null || gameObject.tag == "Friendly" && currenttarget.tag != "Wegpunkt")
             currenttarget = target;
-		print (currenttarget.position);
+		//print (currenttarget.position);
 		targetdistance = Vectorlaenge(Vectorberechnung(transform.position, currenttarget.transform.position));
 		transform.position += (new Vector3(currenttarget.position.x,1f,currenttarget.position.z)/*currenttarget.position*/ - transform.position) * (1/targetdistance) * speed * Time.deltaTime;
 		//print (target);
@@ -247,11 +247,11 @@ public class Wegfindung : MonoBehaviour {
 		
 			////print ("planttrigger");
                 break;
-           
-                break;
+       
+
         case "Enemy":
 
-        if (!inTriggerEnemy) 
+                if (!inTriggerEnemy && gameObject.tag == "Enemy") 
         {
             inTriggerEnemy = true;
             speed -= Random.Range (1, 2);
@@ -271,8 +271,11 @@ public class Wegfindung : MonoBehaviour {
         {
 
             case "Enemy":
-                inTriggerEnemy = false;
-                speed = Initiatedspeed;
+                if (gameObject.tag == "Enemy")
+                {
+                    inTriggerEnemy = false;
+                    speed = Initiatedspeed;
+                }
                 break;
         }
     }
